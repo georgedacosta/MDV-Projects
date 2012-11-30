@@ -7,7 +7,7 @@ November 29, 2012
 
 //Variables
 
-var ourTrip = "Our trip to New York";
+var ourTrip = "New York City";
 var ourAttractions = [
 					"Museum of Modern Art",
 					"Central Park",
@@ -31,7 +31,18 @@ var no = false;
 var milesWalked = 5;
 
 
-
 //Procedure
 
-var = function () 
+var whereToGo = function(whereToTravel){
+	whereToTravel = ourTrip;
+	if (whereToTravel === "New York City"){
+		console.log("We are going to " + ourTrip + " for vacation!");
+		
+		} else {
+			
+		console.log("Sadly, we canot go to " + ourTrip + " at this time.");
+		};
+		
+};
+
+whereToGo();
