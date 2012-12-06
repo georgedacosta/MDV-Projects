@@ -11,7 +11,7 @@ var ourTrip = "New York City";
 var ticketCost = 125;
 var numberTickets = 2;
 var game = "Yankees game";
-var atBat = ["no score", "0-2", "1-2", "2-2", "3-2", "3-4", "3-6", "4-7", "Yankees Win!"];
+var endInning = ["0-0", "0-2", "1-2", "2-2", "3-2", "3-4", "3-6", "4-7", "Yankees Win!"];
 var innings = {
 	inning1: "",
 	inning2: "",
@@ -40,13 +40,6 @@ var json = {
 		},
 
 				{
-			"name": 	"Eduardo Nunez",
-			"number": 	26,
-			"position":	"short stop",
-			"nickName":	"NUNEZ"
-		},
-		
-				{
 			"name": 	"Mark Teixeira",
 			"number": 	25,
 			"position":	"first base",
@@ -70,23 +63,42 @@ var whatToDo = function(ourTrip){
 		console.log("We want to go to a " + game + "!");
 		} else {
 		console.log("Not really interested in going to a " + game + ".");
-	}	
+		}		
 };
 
 //Boolean
 
 var goToGame = function(ticketCost, numberTickets){
 	if (ticketCost * 2 <= 300 && numberTickets >= 1) {
-			seeGame = true;
-		} else{
-			seeGame = false;
+		var	seeGame = true;
+				console.log("It is " + seeGame + ", we bought " + numberTickets + " tickets from a scalper.");
+		} else {
+		var	seeGame = false;
+				console.log("Our thinking it would be easy to get " + numberTickets + " tickets for the " + game + " was unfortunately, " + seeGame + ".");
 		};
 		return seeGame;	
 };
 
+//Accessor
+
+var playerIntro = function(json){
+	for (var i = 0; i < json.players.length; i++){
+		var	player = json.players[i];
+		console.log("Playing " + player.position + ", number " + player.number + " is " + player.name + ". The crowd chants " + player.nickName + ", " + player.nickName + ", " + player.nickName + "!");
+	}	
+	return player;
+};
 
 
+var junkFood = function(){
+	
+	
+	
+	
+};
 
 whatToDo(ourTrip);
 goToGame(ticketCost, numberTickets);
-console.log("It is " + seeGame + " we were able to get " + numberTickets + " tickets from a scalper.");
+console.log("As we take our seats at the " + game + ", the announcers voice starts to boom:");
+playerIntro(json);
+
