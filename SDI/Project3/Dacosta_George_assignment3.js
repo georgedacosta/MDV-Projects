@@ -12,17 +12,9 @@ var ticketCost = 125;
 var numberTickets = 2;
 var game = "Yankees game";
 var endInning = ["0-0", "0-2", "1-2", "2-2", "3-2", "3-4", "3-6", "4-7", "Yankees Win!"];
-var innings = {
-	inning1: "",
-	inning2: "",
-	inning3: "",
-	inning4: "",
-	inning5: "",
-	inning6: "",
-	inning7: "",
-	inning8: "",
-	inning9: ""	
-};
+var innings = ["1st inning", "2nd inning", "3rd inning", "4th inning", "5th inning", "6th inning", "7th inning", "8th inning", "9th inning"];
+var food = ["hot dogs", "popcorn", "Cracker Jacks"];
+var drink = ["Coke", "beer", "hot chocolate"];
 
 var json = {
 	"players": [
@@ -76,7 +68,7 @@ var goToGame = function(ticketCost, numberTickets){
 		var	seeGame = false;
 				console.log("Our thinking it would be easy to get " + numberTickets + " tickets for the " + game + " was unfortunately, " + seeGame + ".");
 		};
-		return seeGame;	
+		return seeGame + numberTickets;	
 };
 
 //Accessor
@@ -89,16 +81,24 @@ var playerIntro = function(json){
 	return player;
 };
 
+//Mutator
 
-var junkFood = function(){
+var stuffFace = function(food, drink){
 	
-	
-	
-	
+	for (var i = 0, j = drink.length; i < j; i++) {
+		console.log("The game has started, so time for junk food! How about some " + food[i] + " and a " + drink[i] + "!"); 		
+	};
+		food.shift();
+		food.shift();
+		food.shift();
+	return food;	
 };
+
+
 
 whatToDo(ourTrip);
 goToGame(ticketCost, numberTickets);
 console.log("As we take our seats at the " + game + ", the announcers voice starts to boom:");
 playerIntro(json);
+stuffFace(food, drink);
 
