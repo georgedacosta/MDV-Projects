@@ -7,8 +7,13 @@ Project4
 
 
 var myLibrary = function(){
-	
 
+
+/*
+Extra credit project2 use of key word var when declaring local variables
+extra credit project3 coding completeness, all 12 functions createDocument	
+extra credit project3 encapsulation done properly in project4
+*/
 /* Phone Pattern */
 	
 	var phoneVal = function(phoneNumber){
@@ -30,7 +35,7 @@ var myLibrary = function(){
 	
 /* 	URL pattern */
 	
-	
+								/* Extra credit project2 missing logical operator OR */
 	var urlVal = function (url) {
 		var urlRE = /(?:[\w-]+\.)+[a-z]{2,6}$/;
 	var urlCk = urlRE.test(url);
@@ -123,7 +128,7 @@ var myLibrary = function(){
 
 
 /* Array sorted by key */
-
+							/* Extra credit project2 use of an array method */
 	var sortKey = function(){
 	var array = [{a:3}, {a:1}, {a:2}];
 	var key = "a";
@@ -141,6 +146,7 @@ var myLibrary = function(){
 		
 	};
 	
+/* extra credit project2 using returns properly */
 	
 	return {
 			"phoneCk":phoneVal,
