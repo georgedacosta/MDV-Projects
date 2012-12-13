@@ -83,12 +83,63 @@ var myLibrary = function(){
 	return getFuzz	
 };
 
+/* Differance in two dates */ 
+
+	var difDate = function(startDate, endDate){
+		var day1 = 24*60*60*1000;
+		var difDates = Math.floor(Math.abs((startDate.getTime() - endDate.getTime())/(day1)));
+		return difDates;	
+};
 
 
+/* String to number */
+
+	var stringToNum = function(string){
+	return parseFloat(string);
+};
+
+/* Array Functions */
+/* Number Array */
+/* Smallest value in array that is greater than number given */
+
+	var numAr = function(array, giveNum) {
+		var smallVal = Number.POSITIVE_INFINITY;
+		for (var i = 0; i < array.length; i ++) {
+				if (giveNum < array[i] && array[i] < smallVal) {
+					      smallVal = array[i]};	
+		};
+	return smallVal;	
+	};	
+
+/* Total value in array */
+
+	var numAdd = function (array){
+	var sumNum = 0;
+			for (var i = 0; i < array.length; i++){
+				if (!isNaN(parseInt(array[i]))) {sumNum += array[i];}
+			};
+	return sumNum;			
+};
 
 
+/* Array sorted by key */
 
-
+	var sortKey = function(){
+	var array = [{a:3}, {a:1}, {a:2}];
+	var key = "a";
+			var    compare = function (a, b){
+			if (a[key] < b[key]){
+				return -1;
+				} else if (a[key] > b[key]){
+				return 1;
+				} else {
+				return 0;
+				};
+		};	
+		var sortedKey = array.sort(compare);
+	return sortedKey;	
+		
+	};
 	
 	
 	return {
@@ -99,47 +150,13 @@ var myLibrary = function(){
 		    "swap":charSwitch,
 		    "decimal":changeDecimal,
 			"getFuzz":numFuzz,		    
-		    
-		    
-		    
-		    
+		    "difDates":difDate,
+		    "stringToNum":stringToNum,
+		    "numAr":numAr,
+		    "numAdd":numAdd,
+		    "sortKey":sortKey
 	};
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -156,3 +173,8 @@ console.log("say hello to my little friend = " + library.titleCase("say hello to
 console.log("x,y,z = " + library.swap("x,y,z",",","/"));
 console.log("5.7 = " + library.decimal(5.7));
 console.log("getFuzz = " + library.getFuzz(30,50,90));
+console.log("There are " + library.difDates(new Date(2012,06,25), new Date()) + " days between today and when I started my classes on June 25 2012.");
+console.log("the string \"15\" is now the number " + library.stringToNum("15"));
+console.log("The lowest number of the array that is greater than the number given is, " + library.numAr([3,15,22,9,17], 5));
+console.log("The total numbers in the array is = " + library.numAdd([true,8,10,"NaN", false, 12]));
+console.log(library.sortKey());
