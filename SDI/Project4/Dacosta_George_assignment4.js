@@ -11,7 +11,7 @@ var myLibrary = function(){
 
 /*
 Extra credit project2 use of key word var when declaring local variables
-extra credit project3 coding completeness, all 12 functions createDocument	
+extra credit project3 coding completeness, all 12 functions complete	
 extra credit project3 encapsulation done properly in project4
 */
 /* Phone Pattern */
