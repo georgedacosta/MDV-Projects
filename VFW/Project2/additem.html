@@ -1,0 +1,108 @@
+<!doctype html>
+<!--
+George Dacosta
+VFW 1301
+Project 2
+additem.html
+January 17, 2013
+-->
+<html>
+	<head>
+		<!-- Character Set Meta Tags -->
+		<meta charset="utf-8"/>
+		<meta name="description" content="Barter Helper Form"/>
+		<meta name="keywords" content "appointment t info, item value, trade, purchase"/>
+		<meta name="viewport" content="user-scalable=no, width=device-width"/>
+		<meta name="HandheldFriendly" content="True"/>
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="robots" content="noindex, nofollow"/>
+		<meta name="viewport" content="target-densitydpi=device-dpi"/>
+		<!App Name Title - ->
+		<title> Barter Helper</title>
+	</head>
+	<body>
+		<h1>Barter Helper Form</h1>
+		<p>Barter helper will help you to track your trades, appointments and whether or not you are making a profit! The more information you provide, the more beneficial Barter Helper will be to you!</p>
+			
+		<form action="#" method="post">
+			<fieldset>
+				<legend>Appointment Info</legend>
+				<label for="apptName">Appointment Name:&nbsp;&nbsp;</label><input type="text" name="apptName" id="apptName"/>
+				
+				<br/>
+				<br/>
+				
+				<label for="apptDate">Appointment Date: </label><input id="apptDate" type="date"/>
+				
+				<br/>
+				<br/>
+				
+				<label for="email">Email:&nbsp;&nbsp;</label><input type="text" name="email" id="email"/>
+				
+				<br/>
+				<br/>
+				
+				<label for="phone">Phone Number:&nbsp;&nbsp;</label><input type="text" name="phone" id="phone"/>
+				
+				<br/>
+				<br/>
+				
+				<label for="apptType">Appointment Type:</label>
+				
+				<select name="apptType" id="apptType">
+					<option value="choose appointment" selected>Choose Appointment</option>
+					<option value="sales">Sales</option>
+					<option value="trade">Trade</option>
+					<option value="appraisal">Appraisal</option>
+					<option value="purchase">Purchase</option>
+					<option value="delivery">Delivery</option>
+				</select>
+				
+				<br/>
+				<br/>
+			</fieldset>
+			
+				<br/>
+				<br/>
+				
+			<fieldset>
+			<legend>Item Info</legend>
+				<label for="itemName">ItemName:&nbsp;&nbsp;</label><input type="text" name="itemName" id="itemName"/>
+				
+				<br/>
+				<br/>
+				
+				<label for="itemChange">Did Item Change Hands?:</label>
+				
+				<input type="radio" name="itemChange" id="yes" value="yes"><label for="yes">Yes</label>&nbsp;&nbsp; 
+				<input type="radio" name="itemChange" id="no" value="no"><label for="no">No</label>
+				
+				<br/>
+				<br/>
+				
+				<label for="sliderLabel">Item Value:</label>
+				
+				<br/>
+				
+				<label for="lowEnd">$0</label>
+				
+				<input type="range" min="1" max="10000" name="itemValue" id="itemValue" type="range"><label for="highEnd">$10,000</label>
+
+				<br/>
+				<br/>
+				
+				<label for="notes">Notes:</label><textarea id="notes"></textarea>
+				
+				<br/>
+				<br/>
+				
+				<input type="hidden">
+
+				
+				<a href="#">Clear Stored Data</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Display Data</a>
+				
+				<input type="hidden">
+			</fieldset>
+		</form>
+	</body>
+</html>
