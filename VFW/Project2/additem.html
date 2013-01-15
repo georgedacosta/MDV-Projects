@@ -23,86 +23,39 @@ January 17, 2013
 	<body>
 		<h1>Barter Helper Form</h1>
 		<p>Barter helper will help you to track your trades, appointments and whether or not you are making a profit! The more information you provide, the more beneficial Barter Helper will be to you!</p>
+		
+		<a href="#" id="clearDataLink">Clear Stored Data</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="displayDataLink">Display Data</a>
+
 			
-		<form action="#" method="post">
+		<form action="#" method="post" id="apptForm">
 			<fieldset>
 				<legend>Appointment Info</legend>
-				<label for="apptName">Appointment Name:&nbsp;&nbsp;</label><input type="text" name="apptName" id="apptName"/>
-				
-				<br/>
-				<br/>
-				
-				<label for="apptDate">Appointment Date: </label><input id="apptDate" type="date"/>
-				
-				<br/>
-				<br/>
-				
-				<label for="email">Email:&nbsp;&nbsp;</label><input type="text" name="email" id="email"/>
-				
-				<br/>
-				<br/>
-				
-				<label for="phone">Phone Number:&nbsp;&nbsp;</label><input type="text" name="phone" id="phone"/>
-				
-				<br/>
-				<br/>
-				
-				<label for="apptType">Appointment Type:</label>
-				
-				<select name="apptType" id="apptType">
-					<option value="choose appointment" selected>Choose Appointment</option>
-					<option value="sales">Sales</option>
-					<option value="trade">Trade</option>
-					<option value="appraisal">Appraisal</option>
-					<option value="purchase">Purchase</option>
-					<option value="delivery">Delivery</option>
-				</select>
-				
-				<br/>
-				<br/>
+				<ul id="apptInfo">
+					<li><label for="apptName">Appointment Name:&nbsp;&nbsp;</label><input type="text" name="apptName" id="apptName"/></li>
+					
+					<li><label for="apptDate">Appointment Date: </label><input id="apptDate" type="date"/></li>
+					<li><label for="email">Email:&nbsp;&nbsp;</label><input type="text" name="email" id="email"/></li>
+					<li><label for="phone">Phone Number:&nbsp;&nbsp;</label><input type="text" name="phone" id="phone"/></li>
+					<li id="dDown"><label for="apptType">Appointment Type:</label></li>
+				</ul>	
 			</fieldset>
-			
-				<br/>
-				<br/>
 				
 			<fieldset>
 			<legend>Item Info</legend>
-				<label for="itemName">ItemName:&nbsp;&nbsp;</label><input type="text" name="itemName" id="itemName"/>
-				
-				<br/>
-				<br/>
-				
-				<label for="itemChange">Did Item Change Hands?:</label>
-				
-				<input type="radio" name="itemChange" id="yes" value="yes"><label for="yes">Yes</label>&nbsp;&nbsp; 
-				<input type="radio" name="itemChange" id="no" value="no"><label for="no">No</label>
-				
-				<br/>
-				<br/>
-				
-				<label for="sliderLabel">Item Value:</label>
-				
-				<br/>
-				
-				<label for="lowEnd">$0</label>
-				
-				<input type="range" min="1" max="10000" name="itemValue" id="itemValue" type="range"><label for="highEnd">$10,000</label>
-
-				<br/>
-				<br/>
-				
-				<label for="notes">Notes:</label><textarea id="notes"></textarea>
-				
-				<br/>
-				<br/>
-				
-				<input type="hidden">
-
-				
-				<a href="#">Clear Stored Data</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Display Data</a>
-				
-				<input type="hidden">
+				<ul>
+					<li><label for="itemName">ItemName:&nbsp;&nbsp;</label><input type="text" name="itemName" id="itemName"/></li>
+					<li><label for="itemChange">Did Item Change Hands?:</label></li>					
+					<li><input type="radio" name="itemChange" id="yes" value="yes"><label for="yes">Yes</label></li>
+					<li><input type="radio" name="itemChange" id="no" value="no"><label for="no">No</label></li>
+  					<li><label for="slideLabel">Item Value</label></li>
+					<li><label for="min">$1</label><input type="range" min="1" max="10000" name="itemValue" id="itemValue"><label for="max">$10,000</label></li>
+					<li><label for="notes">Notes:</label><textarea id="notes"></textarea></li>
+					<li><input type="hidden"></li>
+				</ul>
 			</fieldset>
+			<input type="submit" value="Save Appointment" id="storeButton"/>
 		</form>
+		<script src="js/main.js" type="text/javascript"></script>
+		
 	</body>
 </html>
