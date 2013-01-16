@@ -31,23 +31,49 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 		selectListItem.appendChild(makeDD);
 		
+	};
+	
+	function saveData(){
+		var numbId 			= Math.floor(Math.random()*1000001);
+		//Gather all form field values and store in an object.
+		//Object properties contain array with the form label and input value.
+		var product			={};
 		
+			product.apptName	=["Appointment Name", $('apptName').value];
+			product.apptDate	=["Appointment Date", $('apptDate').value];
+			product.email   	=["Email", $('email').value];
+			product.phone	    =["Phone Number", $('phone').value];
+			product.apType    =["Appointment Type", $('apType').value];
+/*
+			product.itemName    =["Item Name"], $('itemName').value];
+			product.itemChange  =["Did Item Change Hands", itemChangeValue];
+*/
+			product.amount      =["Item Value", $('amount').value];
+			product.notes       =["Notes:", $('notes').value];
+		// Save data into Local Storage: Use Stringify to convert object to a string.
+		localStorage.setItem(numbId, JSON.stringify(product));
+		alert("Info Stored!");
+					
 		
 	};
+	
+	
+	
+	
 	//Variable defaults
 	var apptType = ["--Choose Appointment--", "Sales", "Trade", "Appraisal", "Purchase", "Delivery"];
 	makeAppt();
 	
 	
 	
-	//Set Link & Submit Click Events
 /*
+	//Set Link & Submit Click Events
 	var displayDataLink = $('displayDataLink');
 	displayDataLink.addEventListener("click", pullData);
 	var clearDataLink = $('clearDataLink');
 	clearDataLink.addEventListener("click", eraseLS);
-	var storeButton = $('storeButton');
-	store.addEventListener("click", saveData);
-	
 */
+	var storeButton = $('storeButton');
+	storeButton.addEventListener("click", saveData);
+	
 });
