@@ -19,7 +19,9 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	//Variable defaults
 	var apptType = ["--Choose Appointment--", "Sales", "Trade", "Appraisal", "Purchase", "Delivery"],
-	    itemChangeValue;
+	    itemChangeValue = "No",
+	    errorMessage = ge('errors');
+	    
 	//Create select field element and populate with options.
 	
 	function makeAppt(){
@@ -48,7 +50,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	};
 
-	function togglecontrols(n){
+	function toggleControls(n){
 		switch(n){
 	   	    case "on":
 	   	         ge('apptForm').style.display = "none";
@@ -65,7 +67,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	   	    	break;
 	   	    default:	
 		    	return false;
-	}	    	
+		 }	    	
 	};	
 		
 	
@@ -91,7 +93,7 @@ window.addEventListener("DOMContentLoaded", function(){
   			product.itemName    =["Item Name", ge('itemName').value];  
 			product.itemChange  =["Did Item Change Hands", itemChangeValue];
 			product.amount      =["Item Value", ge('amount').value];
-			product.notes       =["Notes:", ge('notes').value];
+			product.comments       =["comments:", ge('comments').value];
 		// Save data into Local Storage: Use Stringify to convert object to a string.
 		localStorage.setItem(numbId, JSON.stringify(product));
 		alert("Info Stored!");
@@ -100,17 +102,18 @@ window.addEventListener("DOMContentLoaded", function(){
 	};
 	
 	function pullData(){
-		togglecontrols("on");
+		toggleControls("on");
 		if(localStorage.length === 0){
 			alert("There are no appointments to display");
 		}
 		//Write Data from Local Storage to the Browser.
 		var createDiv = document.createElement('div');
-		createDiv.setAttribute("idNumb",'items');
+		createDiv.setAttribute("id", "items");
 		var createList = document.createElement('ul');
 		createDiv.appendChild(createList);
 		document.body.appendChild(createDiv);
-		for(var i=0, len=localStorage.length; i<len;i++){
+		ge('items').style.display = "block"; 
+		for(var i=0, len=localStorage.length; i<len; i++){
 			var createLi = document.createElement('li');
 			createList.appendChild(createLi);
 			var linkItem = document.createElement('li');
@@ -125,7 +128,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			    createSubList.appendChild(createSubli);
 			    var subText = myObject[n][0]+" "+myObject[n][1];
 			    createSubli.innerHTML = subText;
-			    createSubli.appendChild(linkItem)
+			    createSubli.appendChild(linkItem);
 				
 			}
 			createItemLinks(localStorage.key(i),linkItem); //Create the edit and delete buttons/Link for each item in Local Storage.
@@ -142,25 +145,69 @@ window.addEventListener("DOMContentLoaded", function(){
 		var linkToEdit = document.createElement('a');
 	    linkToEdit.href = "#";
 		linkToEdit.key = key;
-		var eText = "Edit Info";
-/* 		linkToEdit.addEventListener("click", editAppt); */
+		var eText = "Edit Appointment";
+ 		linkToEdit.addEventListener("click", editAppt); 
 		linkToEdit.innerHTML = eText;
 		linkItem.appendChild(linkToEdit);
 		
 		
 		// add line break
-		var tagBr =document.createElement('br');
+		var tagBr = document.createElement('br');
 		linkItem.appendChild(tagBr);
 		
-		var deleteItem = document.createElement('a');
-		deleteItem.href = "#";
-		deleteItem.key = key;
+		var deleteItemL = document.createElement('a');
+		deleteItemL.href = "#";
+		deleteItemL.key = key;
 		var delText = "Delete Appointment";
-/* 		deleteItem.addEventListener("click", deleteAppt); */
-		deleteItem.innerHTML = delText;
-		linkItem.appendChild(deleteItem);
+/*  		deleteItemL.addEventListener("click", deleteAppt); */
+		deleteItemL.innerHTML = delText;
+		linkItem.appendChild(deleteItemL);
 		
 	}
+	
+	
+	function editAppt(){
+		//Grab data from our item from Local Storage.
+		var worth = localStorage.getItem(this.key);
+		var product = JSON.parse(worth);
+		
+		//shows form
+		toggleControls("off");
+	
+		//populate form fields with current values
+		
+		ge('apptName').worth = product.apptName[1];
+		ge('apptDate').worth = product.apptDate[1];
+		ge('email').worth = product.email[1];
+		ge('phone').worth = product.phone[1];		
+		ge('appts').worth = product.apptType[1];
+		ge('itemName').worth = product.itemName[1];
+		var realR = document.forms[0].itemChange;
+		for(var i=0; i<realR.length; i++){
+			if(realR[i].value == "yes" && product.itemChange[1] == "yes"){
+				realR[i].setAttribute("checked", "checked");
+			}else if(realR[i].value == "no" && product.itemChange[1] == "no"){
+				realR[i].setAttribute("checked", "checked");
+				
+			
+			}
+		}
+		ge('amount').worth = product.amount[1];
+		ge('comments').worth = product.comments[1];
+		
+		//remove the initial listener from the input "Save Appointment" button
+		storeButton.removeEventListener("click", saveData);
+		//change Submit button value to edit button
+		ge('storeButton').value = "Edit Appointment";
+		var editButton = ge('storeButton');
+		// save the key value of this function as a property of the edit button event
+		//so it can be used when we save the data we editied.
+		editButton.addEventListener("click", confirm);
+		editButton.key =this.key;
+		
+	}
+	
+	
 	
 	function eraseLs(){
 		if(localStorage.length === 0){
@@ -172,6 +219,72 @@ window.addEventListener("DOMContentLoaded", function(){
 			window.location.reload();
 			return false;
 		}
+		
+	}
+	
+	function confirm(p){
+		//Define the elements we want to check
+		var getAppts = ge('appts');
+		var getApptName = ge('apptName');
+		var getApptDate = ge('apptDate');
+		var getEmail = ge('email');
+		
+		//reset error msgs
+		errorMessage.innerHTML = "";
+		getAppts.style.border = "1px solid black";
+		getApptName.style.border = "1px solid black";
+		getApptDate.style.border = "1px solid black";
+	    getEmail.style.border = "1px solid black";
+		     
+		// get error msgs
+		var notesAry = [];
+		//group validation
+		if(getAppts.value === "--Choose Appointment--"){
+		    var appointmentError = "Please choose an Appointment.";
+		    getAppts.style.border = "1px solid red";
+		    notesAry.push(appointmentError);
+		    
+		}
+		
+		//Appoint Name validate
+		if(getApptName.value === ""){
+			 var apptNameError = "Please enter a name.";
+		     getApptName.style.border = "1px solid red";
+		     notesAry.push(apptNameError);
+		     }
+		     
+		//Appointment date validate
+		if(getApptDate.value === ""){
+			 var apptDateError = "Please enter a date.";
+		     getApptDate.style.border = "1px solid red";
+		     notesAry.push(apptDateError);
+		     }
+		     
+		//email valiate
+		var regEx = /^\w+([\.]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		if (!(regEx.exec(getEmail.value))){
+			var emailError = "Please Enter An Email Address.";
+			getEmail.style.border = "1px solid red";
+			notesAry.push(emailError);
+		}    
+				
+		//if there were any errors, display them on the screen
+		if(notesAry.length >= 1){
+		     for(var i=0, j=notesAry.length; i < j; i++){
+			     var text = document.createElement('li');
+			     text.innerHTML = notesAry[i];
+			     errorMessage.appendChild(text);
+			     
+		     }
+		     p.preventDefault();
+		     return false;
+		     
+		}else{
+		    // if all is ok, then save data
+			saveData();
+			
+		}
+		 
 	}
 	
 	makeAppt();
@@ -184,7 +297,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
 
 	var storeButton = ge('storeButton');
-	storeButton.addEventListener("click", saveData);
+	storeButton.addEventListener("click", confirm);
 		console.log("storeData fired");
 	
 
@@ -192,3 +305,4 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	
 	});
+
