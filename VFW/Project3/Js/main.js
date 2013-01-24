@@ -77,8 +77,17 @@ window.addEventListener("DOMContentLoaded", function(){
 
 
 	
-	function saveData(){
-		var numbId 			= Math.floor(Math.random()*1000001);
+	function saveData(key){
+		// If this is a new item and we need a new key.
+		if(!key){
+			
+			var numbId 			= Math.floor(Math.random()*1000001);
+			}else{
+			//set the id tho the exisiting key that we are editing so that it will save over the data.
+			//the key is the same key that's been passed along from the isValid event handler
+			//to the validate function then passed here through the saveData 
+				numbId =key;
+			}
 		console.log("saveData ran");
 		//Gather all form field values and store in an object.
 		//Object properties contain array with the form label and input value.
@@ -115,8 +124,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		ge('items').style.display = "block"; 
 		for(var i=0, len=localStorage.length; i<len; i++){
 			var createLi = document.createElement('li');
-			createList.appendChild(createLi);
 			var linkItem = document.createElement('li');
+			createList.appendChild(createLi);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			//Convert the string from Local Storage value back to an object using JSON.parse()
@@ -159,7 +168,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		deleteItemL.href = "#";
 		deleteItemL.key = key;
 		var delText = "Delete Appointment";
-/*  		deleteItemL.addEventListener("click", deleteAppt); */
+ 		deleteItemL.addEventListener("click", deleteAppt); 
 		deleteItemL.innerHTML = delText;
 		linkItem.appendChild(deleteItemL);
 		
@@ -184,9 +193,9 @@ window.addEventListener("DOMContentLoaded", function(){
 		ge('itemName').worth = product.itemName[1];
 		var realR = document.forms[0].itemChange;
 		for(var i=0; i<realR.length; i++){
-			if(realR[i].value == "yes" && product.itemChange[1] == "yes"){
+			if(realR[i].worth == "yes" && product.itemChange[1] == "yes"){
 				realR[i].setAttribute("checked", "checked");
-			}else if(realR[i].value == "no" && product.itemChange[1] == "no"){
+			}else if(realR[i].worth == "no" && product.itemChange[1] == "no"){
 				realR[i].setAttribute("checked", "checked");
 				
 			
@@ -202,12 +211,21 @@ window.addEventListener("DOMContentLoaded", function(){
 		var editButton = ge('storeButton');
 		// save the key value of this function as a property of the edit button event
 		//so it can be used when we save the data we editied.
-		editButton.addEventListener("click", confirm);
-		editButton.key =this.key;
+		editButton.addEventListener("click", isValid);
+		editButton.key = this.key;
 		
 	}
 	
-	
+	function deleteAppt(){
+			var ask = confirm("Do you want to delete this Appointment?");
+			if(ask){
+				localStorage.removeItem(this.key);
+				window.location.reload();
+			}else{
+				alert("Appointment was not deleted!");
+				
+			}
+	}
 	
 	function eraseLs(){
 		if(localStorage.length === 0){
@@ -222,7 +240,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		
 	}
 	
-	function confirm(p){
+	function isValid(p){
 		//Define the elements we want to check
 		var getAppts = ge('appts');
 		var getApptName = ge('apptName');
@@ -280,8 +298,9 @@ window.addEventListener("DOMContentLoaded", function(){
 		     return false;
 		     
 		}else{
-		    // if all is ok, then save data
-			saveData();
+		    // if all is ok, then save data. send the key value(came from the editAppt function).
+		    // this key value was passed through the isValid event listener as a property.
+			saveData(this.key);
 			
 		}
 		 
@@ -297,7 +316,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
 
 	var storeButton = ge('storeButton');
-	storeButton.addEventListener("click", confirm);
+	storeButton.addEventListener("click", isValid);
 		console.log("storeData fired");
 	
 
