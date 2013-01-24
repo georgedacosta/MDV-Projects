@@ -177,32 +177,32 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	function editAppt(){
 		//Grab data from our item from Local Storage.
-		var worth = localStorage.getItem(this.key);
-		var product = JSON.parse(worth);
+		var value = localStorage.getItem(this.key);
+		var product = JSON.parse(value);
 		
 		//shows form
 		toggleControls("off");
 	
 		//populate form fields with current values
 		
-		ge('apptName').worth = product.apptName[1];
-		ge('apptDate').worth = product.apptDate[1];
-		ge('email').worth = product.email[1];
-		ge('phone').worth = product.phone[1];		
-		ge('appts').worth = product.apptType[1];
-		ge('itemName').worth = product.itemName[1];
+		ge('apptName').value = product.apptName[1];
+		ge('apptDate').value = product.apptDate[1];
+		ge('email').value = product.email[1];
+		ge('phone').value = product.phone[1];		
+		ge('appts').value = product.apptType[1];
+		ge('itemName').value = product.itemName[1];
 		var realR = document.forms[0].itemChange;
 		for(var i=0; i<realR.length; i++){
-			if(realR[i].worth == "yes" && product.itemChange[1] == "yes"){
+			if(realR[i].value == "yes" && product.itemChange[1] == "yes"){
 				realR[i].setAttribute("checked", "checked");
-			}else if(realR[i].worth == "no" && product.itemChange[1] == "no"){
+			}else if(realR[i].value == "no" && product.itemChange[1] == "no"){
 				realR[i].setAttribute("checked", "checked");
 				
 			
 			}
 		}
-		ge('amount').worth = product.amount[1];
-		ge('comments').worth = product.comments[1];
+		ge('amount').value = product.amount[1];
+		ge('comments').value = product.comments[1];
 		
 		//remove the initial listener from the input "Save Appointment" button
 		storeButton.removeEventListener("click", saveData);
