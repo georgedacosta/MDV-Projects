@@ -217,8 +217,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	function deleteAppt(){
-			var ask = confirm("Do you want to delete this Appointment?");
-			if(ask){
+			var question = confirm("Do you want to delete this Appointment?");
+			if(question){
 				localStorage.removeItem(this.key);
 				window.location.reload();
 			}else{
