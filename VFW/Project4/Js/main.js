@@ -204,9 +204,9 @@ window.addEventListener("DOMContentLoaded", function(){
 		ge('itemName').value = product.itemName[1];
 		var realR = document.forms[0].itemChange;
 		for(var i=0; i<realR.length; i++){
-			if(realR[i].value == "yes" && product.itemChange[1] == "yes"){
+			if(realR[i].value == "Yes" && product.itemChange[1] == "Yes"){
 				realR[i].setAttribute("checked", "checked");
-			}else if(realR[i].value == "no" && product.itemChange[1] == "no"){
+			}else if(realR[i].value == "No" && product.itemChange[1] == "No"){
 				realR[i].setAttribute("checked", "checked");
 				
 			

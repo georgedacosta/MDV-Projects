@@ -5,7 +5,7 @@ var json ={
 		"email": ["Email", "joeshmo@spiketv.com"],
 		"phone": ["Phone Number" ,"800-774-5388"],
 		"apptType": ["Appointment Type", "Trade"],
-		"itemType": ["Item Name", "Badge"],
+		"itemName": ["Item Name", "Badge"],
 		"itemChange": ["Did Item Change Hands?", "Yes"],
 		"amount": ["Item Value", "1000"],
 		"comments": ["Comments", "Official badge from t.v show"]
@@ -17,7 +17,7 @@ var json ={
 		"email": ["Email", "rick@pawnstars.com"],
 		"phone": ["Phone Number" ,"800-729-6872"],
 		"apptType": ["Appointment Type", "Sales"],
-		"itemType": ["Item Name", "Rolex"],
+		"itemName": ["Item Name", "Rolex"],
 		"itemChange": ["Did Item Change Hands?", "No"],
 		"amount": ["Item Value", "10000"],
 		"comments": ["Comments", "Could not agree on fair price."]
@@ -30,7 +30,7 @@ var json ={
 		"email": ["Email", "batman@batcave.com"],
 		"phone": ["Phone Number" ,"800-228-6261"],
 		"apptType": ["Appointment Type", "Appraisal"],
-		"itemType": ["Item Name", "Car"],
+		"itemName": ["Item Name", "Car"],
 		"itemChange": ["Did Item Change Hands?", "No"],
 		"amount": ["Item Value", "10000"],
 		"comments": ["Comments", "Used Batmobile"]
@@ -41,7 +41,7 @@ var json ={
 		"email": ["Email", "vvega@jrabbitslims.com"],
 		"phone": ["Phone Number" ,"800-555-1234"],
 		"apptType": ["Appointment Type", "delivery"],
-		"itemType": ["Item Name", "Steak"],
+		"itemName": ["Item Name", "Steak"],
 		"itemChange": ["Did Item Change Hands?", "Yes"],
 		"amount": ["Item Value", "25"],
 		"comments": ["Comments", "Bloddy as hell"]
@@ -52,7 +52,7 @@ var json ={
 		"email": ["Email", "tony@sface.com"],
 		"phone": ["Phone Number" ,"305-666-1983"],
 		"apptType": ["Appointment Type", "Purchase"],
-		"itemType": ["Item Name", "Machine Gun"],
+		"itemName": ["Item Name", "Machine Gun"],
 		"itemChange": ["Did Item Change Hands?", "Yes"],
 		"amount": ["Item Value", "5000"],
 		"comments": ["Comments", "Little Friend"]
@@ -63,7 +63,7 @@ var json ={
 		"email": ["Email", "cgreen@zombie.com"],
 		"phone": ["Phone Number" ,"800-666-6666"],
 		"apptType": ["Appointment Type", "sales"],
-		"itemType": ["Item Name", "Zombrex"],
+		"itemName": ["Item Name", "Zombrex"],
 		"itemChange": ["Did Item Change Hands?", "Yes"],
 		"amount": ["Item Value", "10000"],
 		"comments": ["Comments", "Anti zombie medicine"]
@@ -74,7 +74,7 @@ var json ={
 		"email": ["Email", "ratchet@insomniacgames.com"],
 		"phone": ["Phone Number" ,"999-234-4321"],
 		"apptType": ["Appointment Type", "Delivery"],
-		"itemType": ["Item Name", "Ryno"],
+		"itemName": ["Item Name", "Ryno"],
 		"itemChange": ["Did Item Change Hands?", "No"],
 		"amount": ["Item Value", "10000"],
 		"comments": ["Comments", "Not enough bolts"]
