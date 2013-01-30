@@ -81,7 +81,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		// If this is a new item and we need a new key.
 		if(!key){
 			
-			var numbId 			= Math.floor(Math.random()*1000001);
+			var numbId 			= Math.floor(Math.random()*2037929902);
 			}else{
 			//set the id tho the exisiting key that we are editing so that it will save over the data.
 			//the key is the same key that's been passed along from the isValid event handler
@@ -113,7 +113,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	function pullData(){
 		toggleControls("on");
 		if(localStorage.length === 0){
-			alert("There are no appointments to display");
+			alert("There are no appointments to display default data was added.");
+			autoFdata();
 		}
 		//Write Data from Local Storage to the Browser.
 		var createDiv = document.createElement('div');
@@ -146,6 +147,16 @@ window.addEventListener("DOMContentLoaded", function(){
 		
 		
 	}
+	//Auto Fill Local Storage
+	function autoFdata(){
+		//JSON Object data required to work is coming from json.js file which is loaded from HTML page
+		//Store JSON Object into Local Storage.
+		for(var n in json){
+			var numbId 			= Math.floor(Math.random()*2037929902);
+			localStorage.setItem(numbId, JSON.stringify(json[n]));
+		}
+	}
+	
 	// Create Item Links
 	// Create the edit and delete links for each stored item when displayed.
 	
