@@ -133,6 +133,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			var myObject = JSON.parse(value);
 			var createSubList = document.createElement("ul");
 			createLi.appendChild(createSubList);
+			imageGrab(myObject.apptType[1], createSubList);
 			for(var n in myObject){
 			    var createSubli = document.createElement('li');
 			    createSubList.appendChild(createSubli);
@@ -142,11 +143,21 @@ window.addEventListener("DOMContentLoaded", function(){
 				
 			}
 			createItemLinks(localStorage.key(i),linkItem); //Create the edit and delete buttons/Link for each item in Local Storage.
-			
 		}
 		
+	}
+	
+	//get image for catagory being displayed.
+	function imageGrab(selectName, createSubList){
+		var imgLi = document.createElement("li");
+		createSubList.appendChild(imgLi);
+		var nImage = document.createElement('img');
+		var stSource = nImage.setAttribute("src", "img/"+ selectName + ".png");
+		imgLi.appendChild(nImage);
 		
 	}
+	
+	
 	//Auto Fill Local Storage
 	function autoFdata(){
 		//JSON Object data required to work is coming from json.js file which is loaded from HTML page
