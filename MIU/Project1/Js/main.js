@@ -1,9 +1,9 @@
 /*
 George Dacosta
-VFW 1301
-Project 4
+MIU 1302
+Project 1
 main.js
-January 31, 2013
+February 07, 2013
 */
 
 
