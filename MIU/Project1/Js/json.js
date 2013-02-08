@@ -6,10 +6,6 @@ json.js
 February 07, 2013
 */
 
-
-
-
-
 var json ={
 	"appointment1": {
 		"apptName": ["Appointment Name: ", "Joe Shmo"],
@@ -23,6 +19,7 @@ var json ={
 		"comments": ["Comments: ", "Official badge from t.v show"]
 		
 	},
+	
 	"appointment2": {
 		"apptName": ["Appointment Name: ", "Rick Harrison"],
 		"apptDate": ["Appointment Date: ", "1/29/2013"],
