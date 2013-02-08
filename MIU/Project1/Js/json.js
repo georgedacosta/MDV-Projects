@@ -297,7 +297,7 @@ var json ={
 		"itemChange": ["Did Item Change Hands?: ", "Yes"],
 		"amount": ["Item Value: ", "900"],
 		"comments": ["Comments: ", "Needs ASAP!!"]
-	},
+	}
 
 }
 
