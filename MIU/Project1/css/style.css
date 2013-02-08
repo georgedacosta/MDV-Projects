@@ -1,10 +1,25 @@
 /*
 George Dacosta
-VFW 1301
-Project 4
+MIU 1302
+Project 1
 style.css
-January 31, 2013
+February 07, 2013
 */
+h4 {
+	margin: -120px 10px 55px 135px
+}
+
+
+img#feature {
+	margin: 20px 0px 50px 10px;
+}
+
+
+img#addItemCta {
+	margin: -40px 0px 20px 130px
+	
+}
+
 
 html {
 	background: #f0e8bf;

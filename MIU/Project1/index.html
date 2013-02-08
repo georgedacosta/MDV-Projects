@@ -1,10 +1,10 @@
 <!doctype html>
 <!--
 George Dacosta
-VFW 1301
-Project 4
+MIU 1302
+Project 1
 index.html
-January 31, 2013
+February 07, 2013
 -->
 
 <html>
@@ -13,27 +13,57 @@ January 31, 2013
 		
 			<!-- Character Set Meta Tags -->
 			<meta charset="utf-8" />
-			<meta name="description" content="Barter Helper." />
-			<meta name="keywords" content= "html5, VFW 1301, Project 1, FSO" />
+			<meta name="description" content="Barter This!" />
+			<meta name="keywords" content= "html5, MIU 1302, Project 1" />
 			<meta name="viewport" content="user-scalable=no, width=device-width" />
 			<meta name="HandheldFriendly" content="True" />
 			<meta name="MobileOptimized" content="320" />
 			<meta name="robots" content="noindex, nofollow" />
-			<meta name="target-densitydpi=device-dpi" />
-		    <link href="css/style.css" rel="stylesheet" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			
+				<!-- StyleSheets under here -->
+			<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css"/>
+		    <link href="css/style.css" rel="stylesheet" />
+	
+	
+		<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+		<script src="js/libs/modernizr.custom.min.js"></script>
+
 						<!App Name Title - ->
-			<title> Barter Helper</title>
+			<title> Barter This!</title>
 			
 	</head>
 	
 	<body>
-			<h1>Barter Helper</h1>
-			<h2>Track Your Trades!</h2>
-			<p>Barter Helper will assist you in keeping track of your appointments, trades, profits, and losses.</p>
+		<div data-role="page" id="index" data-theme="c">
+			<header data-role="header" data-position="fixed">
+				<h3>Barter This!</h3>
+			</header>
+			<div id="featureDiv">
+				<img src="img/feature.png" id="feature" alt="Feature Image" />
 			
-			<a href="additem.html"><button type="submit">Click To Barter</button></a>
+			</div>
+			<h4> Barter This! Don't barter your time away!</h4>
+			<a href="additem.html" data-ajax="false"><img src="img/addItemCta.png" id="addItemCta" alt="Add Appointment Image" /></a>
+
+			<div data-role="content" data-theme="a">
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="Filter Appointments">
+					<li data-role="list-divider" data-theme="a" >Browse Appointments By:</li>
+					<li><a href="404.html" data-ajax="false">Sales</a></li>
+					<li><a href="404.html" data-ajax="false">Trade</a></li>
+					<li><a href="404.html" data-ajax="false">Appraisal</a></li>
+					<li><a href="404.html" data-ajax="false">Delivery</a></li>
+					<li><a href="404.html" data-ajax="false">Purchase</a></li>
+				
+				</ul>
 			
+				
+			</div>
+
+		</div>			
+			<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+			<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+						
 	</body>
 	
 </html>
