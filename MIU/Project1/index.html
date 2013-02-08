@@ -45,9 +45,16 @@ February 07, 2013
 			</div>
 			<h4> Barter This! Don't barter your time away!</h4>
 			<a href="additem.html" data-ajax="false"><img src="img/addItemCta.png" id="addItemCta" alt="Add Appointment Image" /></a>
+			<div id="searchDiv">
+				<form id="searchForm" action="#">
+					<input id="search" type="text" name="search"  placeholder="Search Appointments"/>
+					<input id="searchButton" type="submit" value="Search" />
+				</form>
+			</div>
+
 
 			<div data-role="content" data-theme="a">
-				<ul data-role="listview" data-filter="true" data-filter-placeholder="Filter Appointments">
+				<ul data-role="listview" >
 					<li data-role="list-divider" data-theme="a" >Browse Appointments By:</li>
 					<li><a href="404.html" data-ajax="false">Sales</a></li>
 					<li><a href="404.html" data-ajax="false">Trade</a></li>
