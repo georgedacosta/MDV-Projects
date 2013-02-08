@@ -5,6 +5,8 @@ Project 1
 json.js
 February 07, 2013
 */
+
+var json ={
 	"appointment1": {
 		"apptName": ["Appointment Name: ", "Joe Shmo"],
 		"apptDate": ["Appointment Date: ", "1/31/2013"],
@@ -17,6 +19,7 @@ February 07, 2013
 		"comments": ["Comments: ", "Official badge from t.v show"]
 		
 	},
+	
 	"appointment2": {
 		"apptName": ["Appointment Name: ", "Rick Harrison"],
 		"apptDate": ["Appointment Date: ", "1/29/2013"],
