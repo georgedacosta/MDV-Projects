@@ -1,9 +1,9 @@
 /*
 George Dacosta
 MIU 1302
-Project 1
+Project 2
 main.js
-February 07, 2013
+February 14, 2013
 */
 
 

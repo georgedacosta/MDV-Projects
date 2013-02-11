@@ -1,3 +1,11 @@
+/*
+George Dacosta
+MIU 1302
+Project 2
+json.js
+February 14, 2013
+*/
+
 var json ={
 	"appointment1": {
 		"apptName": ["Appointment Name: ", "Joe Shmo"],
