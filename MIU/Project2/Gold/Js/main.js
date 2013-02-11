@@ -1,7 +1,7 @@
 /*
 George Dacosta
 MIU 1302
-Project 2
+Project 2 gold
 main.js
 February 14, 2013
 */
