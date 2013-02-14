@@ -162,7 +162,7 @@ February 14, 2013
 			</footer>
 		</div>
 		<!--
-end appointment date
+		end appointment date
 		start appointment email
 -->
 				<div data-role="page" id="aEmail" >
@@ -196,7 +196,6 @@ end appointment date
 	end email page
 		start Item name page
 -->
-		
 				<div data-role="page" id="aItemName" >
 			<header data-role="header" data-position="fixed">
 				<h3>Barter This!</h3>
@@ -314,10 +313,91 @@ end appointment date
 				</nav>
 			</footer>
 		</div>
+<!--
+  end add appointment page
+  start info page
+-->
+		
+		
+		<div data-role="page" id="info" data-theme="c">
+			<header data-role="header" data-position="fixed">
+				<h3>Barter This!</h3>
+				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
+			</header>
 
-				
-				
+			<div data-role="content" data-theme="a">
+				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder ="Filter Appointments">
+					<li><a href="#developer" >Developer</a></li>
+					<li><a href="#credits" >Credits</a></li>
+					<li><a href="../bronze/index.html#home" data-ajax="false">Bronze App</a></li>
+					<li><a href="https://github.com/georgedacosta/MDV-Projects/tree/master/MIU/Project2" data-ajax="false">Github Repository</a></li>					
+					<li><a href="http://georgedacosta.github.com/MDV-Projects/MIU/Project2/Bronze" data-ajax="false">Bronze gh-pages</a></li>
+					<li><a href="http://georgedacosta.github.com/MDV-Projects/MIU/Project2/Gold" data-ajax="false">Gold gh-pages</a></li>
+				</ul>
+							
+			</div>
+		</div>
+<!--
+		end info page
+		start developer page	
+-->			
+		<div data-role="page" id="developer" data-theme="c">
+			<div data-role="header" data-position="fixed">
+				<h3>Barter This!</h3>
+				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
+			</div>
+				<div data-role="collapsible-set">
+				<div data-role="collapsible" data-collapsed="true">
+					<h2>Education</h2>
+					<p>Currently attending classes through Full Sail University Online Program, for a Bachelor of Science, in Mobile Development. Graduation slated for early 2015.
+					</p>
+				</div>
+				<div data-role="collapsible" data-collapsed="true">
+					<h2>Work Experience</h2>
+					<p>
+						Thirteen years in the Irrigation field. Currently a Licenced Irrigation Contractor in the state of Florida. 
+					</p>
+				</div>
+				<ul data-role="listview" data-inset="true">
+					<li data-role="list-divider">Contact Developer</li>
+					<li><a href="mailto:georgedacosta@fullsail.edu">Email</a></li>
+					<li><a href="404.html" data-ajax="false">Website</a></li>
+				</ul>
+			</div>
 			
+			<footer data-role="footer" data-position="fixed" data-id="navBar">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#addAppt" data-icon="plus">New</a></li>
+						<li><a href="#info" data-icon="info">Info</a></li>
+			
+					</ul>
+				</nav>
+			</footer>						
+		</div>
+<!-- end developer page -->
+<!-- 	start credits page			 -->
+				
+		<div data-role="page" id="credits" data-theme="c">
+				<div data-role="header" data-position="fixed">
+					<h3>Barter This!</h3>
+					<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
+				</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder ="Search Inventory">
+					<li data-role="list-divider">Styling Courtesy Of:</li>
+					<li><a href="http://jquerymobile.com/"></a></li>
+					<li data-role="list-divider">Images Courtesy Of:</li>
+					<li><a href="http://www.freedigitalphotos.net">FreeDigitalPhotos.net</a></li>
+					<li>name</li>
+					<li>name</li>
+					<li>name</li>
+					<li>name</li>
+					<li>name</li>
+					<li><a href="#developer">George Dacosta</a></li>
+				</ul>
+		</div>
 			
 			<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 			<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
