@@ -2,7 +2,7 @@
 <!-- 
 George Dacosta
 MIU 1302
-Project 2 
+Project 2 Bronze
 404.html
 February 14, 2013
 -->
@@ -24,7 +24,7 @@ February 14, 2013
 
 	<!-- StyleSheets under here -->
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />	
-	<link rel="stylesheet" href="css/error.css"><content="on"/>
+	<link rel="stylesheet" href="css/404.css"><content="on"/>
 
 	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 	<script src="js/libs/modernizr.custom.min.js"></script>
@@ -36,11 +36,25 @@ February 14, 2013
 
 		<div data-role="header" data-position="fixed">
 			<h3>Page Not Found</h3>
+			<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
 		</div>
 		<div id="404Body">
 			<h4>404 Nothing To See Here!</h4>			
 			<img src="img/404.jpg"id="404Image" alt="Error Image" />
 		</div>	
+			<footer data-role="footer" data-position="fixed" data-id="navBar">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="index.html#home" data-ajax="false" data-icon="home">Home</a></li>
+						<li><a href="additem.html" data-ajax="false" data-icon="plus">New</a></li>
+						<li><a href="index.html#info" data-ajax="false" data-icon="info">Info</a></li>
+			
+					</ul>
+				</nav>
+			</footer>
+
+	</div>
+
 
 
 
