@@ -56,6 +56,7 @@ February 21, 2013
 					<li><a href="#aDate" data-ajax="false">Date</a></li>
 					<li><a href="#aEmail" data-ajax="false">Email</a></li>
 					<li><a href="#aItemName" data-ajax="false">Item Name</a></li>
+					<li><a href="#itemQual" data-ajax="false">Item Quality</a></li>
 				</ul>
 							
 			</div>
@@ -224,6 +225,33 @@ February 21, 2013
 			</footer>
 		</div>
 <!-- end Item page -->
+				<div data-role="page" id="itemQual" >
+			<header data-role="header" data-position="fixed">
+				<h3>Barter This!</h3>
+				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
+			</header>
+			<div data-role="content" data-theme="a">
+				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter Appointments">
+					<li data-role="list-divider" data-theme="a" >Quality:</li>
+					<li><a href="404.html" data-ajax="false">Excellent</a></li>
+					<li><a href="404.html" data-ajax="false">Good</a></li>
+					<li><a href="404.html" data-ajax="false">Fair</a></li>
+					<li><a href="404.html" data-ajax="false">Scrap</a></li>
+					<li><a href="404.html" data-ajax="false">Garbage</a></li>
+				</ul>
+							
+			</div>
+			<footer data-role="footer" data-position="fixed" data-id="navBar">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#addAppt"  data-icon="plus">New</a></li>
+						<li><a href="#info" data-icon="info">Info</a></li>
+			
+					</ul>
+				</nav>
+			</footer>
+		</div>
 
 <!-- 		Begin add appointment page -->
 		<div data-role="page" id="addAppt" >
@@ -233,9 +261,9 @@ February 21, 2013
 			</header>
 			
 			<div data-role="content">
-				<form action="" method="post" id="addApptForm">
+				<form action="" id="addApptForm">
 					<div data-role="fieldcontain">
-						<label for="name">Appointment Name: *Required</label>
+						<label for="apptName">Appointment Name: *Required</label>
 						<input type="text" name="apptName" id="apptName" placeholder="Joe Shmo" class="required"/>
 					</div>
 					
@@ -250,12 +278,12 @@ February 21, 2013
 					</div>
 					
 					<div data-role="fieldcontain">
-						<label for="name">Phone Number: *Required</label>
-						<input type="text" name="phone" id="phone" placeholder="800-555-5555" class="required"/>
+						<label for="phone">Phone Number: *Required</label>
+						<input type="text" name="phone" id="phone" placeholder="800-555-5555"class="required phone" />
 					</div>
 					
 					<div data-role="fieldcontain">
-						<label for="apptType">Category: *Required</label>
+						<label for="apptType">Select Type:  *Required</label>
 						<select name="apptType" id="apptType" class="required" data-native-menu="false">
 							<option data-placeholder="true" value="">Select Appointment</option>
 							<option value="sales">Sales</option>
@@ -270,6 +298,19 @@ February 21, 2013
 						<label for="itemName">Item Name: </label>
 						<input type="text" name="itemName" id="itemName" placeholder="Ranger Cookies"/>
 					</div>
+					
+					<div data-role="fieldcontain">
+						<label for="iQual">Quality Level</label>
+						<select name="iQual" id="iQual" data-native-menu="false">
+							<option data-placeholder="true" value="">Item Quality</option>
+							<option value="excellent">Excellent</option>
+							<option value="good">Good</option>
+							<option value="fair">Fair</option>
+							<option value="scrap">Scrap</option>
+							<option value="garbage">Garbage</option>
+						</select>	
+					</div>
+
 					
 					<div data-role="fieldcontain">
 						<fieldset data-role="controlgroup">
@@ -292,12 +333,11 @@ February 21, 2013
 					</div>	
 					
 					<div data-role="fieldcontain">
-						<input type="submit" id="submit" value="Save Appointment"data-theme="b"/>
+						<input type="submit" id="submit" value="Save Appointment"data-theme="b"/></br>
 						<input type="reset" id="reset" value="Reset Form" data-theme="a"/>
-					</div>							
+					</div>
+					<a href="#formErrors" id="errorsLink" data-rel="dialog" data-transition="pop">Required Fields</a>							
 					
-			
-									
 				</form>
 				
 			</div>		
@@ -314,10 +354,20 @@ February 21, 2013
 				</nav>
 			</footer>
 		</div>
-<!--
-  end add appointment page
-  start info page
--->
+<!--   end add appointment page -->
+  
+  		<div data-role="dialog" id="formErrors" data-theme="c">
+  			<header data-role="header" data-position="fixed" data-theme="c">
+  				<h2>Required Fields</h2>
+  			</header>
+  			<div data-role="content" data-theme="c">
+  				<ul>
+  							<li></li>
+  				</ul>
+  			</div>
+  		</div>  
+  
+<!--   start info page -->
 		
 		
 		<div data-role="page" id="info" data-theme="c">
@@ -331,9 +381,9 @@ February 21, 2013
 					<li><a href="#developer" >Developer</a></li>
 					<li><a href="#credits" >Credits</a></li>
 					<li><a href="../bronze/index.html#home" data-ajax="false">Bronze App</a></li>
-					<li><a href="https://github.com/georgedacosta/MDV-Projects/tree/master/MIU/Project2" data-ajax="false">Github Repository</a></li>					
-					<li><a href="http://georgedacosta.github.com/MDV-Projects/MIU/Project2/Bronze" data-ajax="false">Bronze gh-pages</a></li>
-					<li><a href="http://georgedacosta.github.com/MDV-Projects/MIU/Project2/Gold" data-ajax="false">Gold gh-pages</a></li>
+					<li><a href="https://github.com/georgedacosta/MDV-Projects/tree/master/MIU/Project3" data-ajax="false">Github Repository</a></li>					
+					<li><a href="http://georgedacosta.github.com/MDV-Projects/MIU/Project3/Bronze" data-ajax="false">Bronze gh-pages</a></li>
+					<li><a href="http://georgedacosta.github.com/MDV-Projects/MIU/Project3/Gold" data-ajax="false">Gold gh-pages</a></li>
 				</ul>
 							
 			</div>
