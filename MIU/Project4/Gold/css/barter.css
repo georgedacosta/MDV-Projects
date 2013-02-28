@@ -14,6 +14,22 @@
 
 /* A
 -----------------------------------------------------------------------------------------------------------*/
+#brand{
+	width: 245px;
+	height: 30px;
+	margin-left: 32px;	
+	margin-top: 2px;
+}
+
+#brand2{
+	width: 200px;
+	height: 30px;
+	margin-left: 42px;
+	margin-top: 2px;
+	padding-left: 50px;
+}
+
+
 #comments{
 	background-color: #ffd8a9;
 
