@@ -23,6 +23,7 @@ February 28, 2013
 			
 				<!-- StyleSheets under here -->
 			<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css"/>
+			<link href="css/barter.css" rel="stylesheet"/>
 		    <link href="css/style.css" rel="stylesheet" />
 	
 	
@@ -37,7 +38,7 @@ February 28, 2013
 	<body>
 	
 <!-- 	Start Home Page -->
-		<div data-role="page" id="home" data-theme="c">
+		<div data-role="page" id="home" data-theme="a">
 			<header data-role="header" data-position="fixed">
 				<h3>Barter This!</h3>
 			</header>
@@ -49,8 +50,8 @@ February 28, 2013
 			<a href="#addAppt" ><img src="img/addItemCta.png" id="addItemCta" alt="Add Appointment Image" /></a>
 
 			<div data-role="content" data-theme="a">
-				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder ="Filter Appointments">
-					<li data-role="list-divider" data-theme="a" >Browse Appointments By:</li>
+				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder ="Filter Appointments" id="fSearch">
+					<li data-role="list-divider" id="listDivide" data-theme="a" >Browse Appointments By:</li>
 					<li><a href="#aType" data-ajax="false">Appointment Type</a></li>
 					<li><a href="#aName" data-ajax="false">Appointment Name</a></li>
 					<li><a href="#aDate" data-ajax="false">Date</a></li>
@@ -83,7 +84,7 @@ February 28, 2013
 
 			<div data-role="content" data-theme="a">
 				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder ="Filter Appointments">
-					<li data-role="list-divider" data-theme="a" >Appointment Types:</li>
+					<li data-role="list-divider" id="listDivide" data-theme="a" >Appointment Types:</li>
 					<li><a href="404.html" data-ajax="false"><img src="img/sales.jpg"/>Sales</a></li>
 					<li><a href="404.html" data-ajax="false"><img src="img/trades.jpg"/>Trade</a></li>
 					<li><a href="404.html" data-ajax="false"><img src="img/appraisal.jpg"/>Appraisal</a></li>
@@ -113,7 +114,7 @@ February 28, 2013
 			</header>
 			<div data-role="content" data-theme="a">
 				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder ="Filter Appointments">
-					<li data-role="list-divider" data-theme="a" >Appointment Names:</li>
+					<li data-role="list-divider" id="listDivide" data-theme="a" >Appointment Names:</li>
 					<li><a href="404.html" data-ajax="false">Dr. Frankenferter</a></li>
 					<li><a href="404.html" data-ajax="false">Rick Harrison</a></li>
 					<li><a href="404.html" data-ajax="false">Chuck Greene</a></li>
@@ -142,7 +143,7 @@ February 28, 2013
 			</header>
 			<div data-role="content" data-theme="a">
 				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter Appointments">
-					<li data-role="list-divider" data-theme="a" >Appointment Date:</li>
+					<li data-role="list-divider" id="listDivide" data-theme="a" >Appointment Date:</li>
 					<li><a href="404.html" data-ajax="false">April 01, 2013</a></li>
 					<li><a href="404.html" data-ajax="false">January 29, 2013</a></li>
 					<li><a href="404.html" data-ajax="false">February 19, 2013</a></li>
@@ -173,7 +174,7 @@ February 28, 2013
 			</header>
 			<div data-role="content" data-theme="a">
 				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter Appointments">
-					<li data-role="list-divider" data-theme="a" >Appointment Email:</li>
+					<li data-role="list-divider" id="listDivide" data-theme="a" >Appointment Email:</li>
 					<li><a href="404.html" data-ajax="false">Dr.Frankenferter@rhps.com</a></li>
 					<li><a href="404.html" data-ajax="false">rick@pawnstars.com</a></li>
 					<li><a href="404.html" data-ajax="false">cgreen@zombie.com</a></li>
@@ -204,7 +205,7 @@ February 28, 2013
 			</header>
 			<div data-role="content" data-theme="a">
 				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter Appointments">
-					<li data-role="list-divider" data-theme="a" >Item Names:</li>
+					<li data-role="list-divider" id="listDivide" data-theme="a" >Item Names:</li>
 					<li><a href="404.html" data-ajax="false">Candy Machine</a></li>
 					<li><a href="404.html" data-ajax="false">Rolex</a></li>
 					<li><a href="404.html" data-ajax="false">Zombrex</a></li>
@@ -232,7 +233,7 @@ February 28, 2013
 			</header>
 			<div data-role="content" data-theme="a">
 				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter Appointments">
-					<li data-role="list-divider" data-theme="a" >Quality:</li>
+					<li data-role="list-divider" id="listDivide" data-theme="a" >Quality:</li>
 					<li><a href="404.html" data-ajax="false">Excellent</a></li>
 					<li><a href="404.html" data-ajax="false">Good</a></li>
 					<li><a href="404.html" data-ajax="false">Fair</a></li>
@@ -254,7 +255,7 @@ February 28, 2013
 		</div>
 
 <!-- 		Begin add appointment page -->
-		<div data-role="page" id="addAppt" >
+		<div data-role="page" id="addAppt" data-theme="a">
 			<header data-role="header" data-position="fixed">
 				<h3>Barter This!</h3>
 				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
@@ -333,8 +334,8 @@ February 28, 2013
 					</div>	
 					
 					<div data-role="fieldcontain">
-						<input type="submit" id="submit" value="Save Appointment"data-theme="b"/></br>
-						<input type="reset" id="reset" value="Reset Form" data-theme="a"/>
+						<input type="submit" id="submit" value="Save Appointment"data-theme="a"/></br>
+						<input type="reset" id="reset" value="Reset Form" data-theme="b"/>
 					</div>
 					<a href="#formErrors" id="errorsLink" data-rel="dialog" data-transition="pop">Required Fields</a>							
 					
@@ -449,7 +450,7 @@ February 28, 2013
 				</div>
 			<div data-role="content">
 				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder ="Filter Page Contents">
-					<li data-role="list-divider">Developed With:</li>
+					<li data-role="list-divider" id="listDivide">Developed With:</li>
 					<li><a href="http://jquerymobile.com/"></a>jQuery Mobile</li>
 					<li data-role="list-divider">Pictures By:</li>
 					<li><a href="http://www.sxc.hu">Stock.xchng Photos</a></li>
