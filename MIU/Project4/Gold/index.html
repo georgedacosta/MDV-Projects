@@ -39,8 +39,11 @@ February 28, 2013
 	
 <!-- 	Start Home Page -->
 		<div data-role="page" id="home" data-theme="a">
+			
 			<header data-role="header" data-position="fixed">
+			
 				<h3>Barter This!</h3>
+				<a href="#home"><img src="img/branding.png" id="brand"></a>
 			</header>
 			<div id="featureDiv">
 				<img src="img/feature.png" id="feature" alt="Feature Image" />
@@ -50,7 +53,7 @@ February 28, 2013
 			<a href="#addAppt" ><img src="img/addItemCta.png" id="addItemCta" alt="Add Appointment Image" /></a>
 
 			<div data-role="content" data-theme="a">
-				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder ="Filter Appointments" id="fSearch">
+				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder ="Filter Appointments" data-theme="a">
 					<li data-role="list-divider" id="listDivide" data-theme="a" >Browse Appointments By:</li>
 					<li><a href="#aType" data-ajax="false">Appointment Type</a></li>
 					<li><a href="#aName" data-ajax="false">Appointment Name</a></li>
