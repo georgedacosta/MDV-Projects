@@ -21,7 +21,11 @@ img#addItemCta {
 }
 
 label.error{
-	display:block; margin:10px 0; color:#cc0000;
+	display:block; margin:10px 0; color:red;
+}
+
+input.error{
+	border: red 3px ridge;
 }
 
 #errorsLink{
