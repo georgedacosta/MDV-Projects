@@ -4,6 +4,235 @@ George Dacosta
 ASD 1304
 Project 1
 main.js
-April 9, 2013
+April 18, 2013
 */
+
+$('#home').on('pageinit', function(){
+	//code needed for home page goes here
+});			
+	
+$('#dispAllBtn').on("click", function(){
+	getData();
+});
+
+
+
+$('#delAll').on("click", function(){
+	deleteData();
+});
+
+/*
+('#dispAll').on('pagecreate', function(){
+
+});
+*/
+
+$('dispAll').on("pageinit", function(){
+
+});
+$('#addAppt').on('pageinit', function(){
+	
+		var myForm = $('#addApptForm'),
+			errorsLink =$('#errorsLink');
+		    myForm.validate({
+			invalidHandler: function(form, validator) {
+				errorsLink.click();
+				
+				var html = '';
+				for(var key in validator.submitted){
+					var label = $('label[for^="'+ key +'"]').not('[generated]');														console.log(label.text);
+					var legend = label.closest('fieldset').find('.ui-controlgroup-label');
+					var fieldName = legend.length ? legend.text() : label.text();
+					html += '<li>' + fieldName + '</li>';
+				};
+				$("#formErrors ul").html(html);
+			},
+			submitHandler: function() {
+				var data = myForm.serializeArray();
+				saveData(data);			
+			}					
+			
+		});
+	
+	
+	//any other code needed for addItem page goes here
+	
+});
+
+$('#aType').on('pageinit', function(){
+		
+});
+
+$('#aName').on('pageinit', function(){
+		
+});
+
+$('#aDate').on('pageinit', function(){
+		
+});
+
+$('#aEmail').on('pageinit', function(){
+		
+});
+
+$('#aItemName').on('pageinit', function(){
+		
+});
+
+$('#info').on('pageinit', function(){
+		
+});
+
+$('#developer').on('pageinit', function(){
+		
+});
+
+$('#credits').on('pageinit', function(){
+		
+});
+
+$('#reset').on('click', function(){
+	window.location.reload();
+});
+
+//The functions below can go inside or outside the pageinit function for the page in which it is needed.
+
+var autofillData = function (){
+	console.log("autofill Fired");
+	for (var n in json) {
+		var id = Math.floor(Math.random()*2037929902);
+		localStorage.setItem(id, JSON.stringify(json[n]));
+	}
+
+	 
+};
+
+var makeItemLink = function(key, linksLi){
+	var editLink = $('<a></a>').attr({
+			"href": "#addAppt",
+			"id": "editItemBtn",
+			"data-role": "button",
+			"data-mini": "true",
+			"data-inline": "true",
+			"key": key			
+			})
+			.html('Edit Appt')
+			.appendTo(linksLi).on("click", editItem);
+			
+	var deleteLink = $('<a></a>').attr({
+			"href": "#",
+			"id": "deleteItemBtn",
+			"data-role": "button",
+			"data-mini": "true",
+			"data-inline": "true",
+			"key": key			
+			})
+			.html('Delete appt')
+			.appendTo(linksLi).on("click", deleteItem);
+			
+			
+};
+
+var getData = function(id){
+	if(localStorage.length === 0){
+		autofillData();
+
+	};
+
+		for (var i=0, len=localStorage.length; i<len; i++){
+		var makeLi = $('<li></li>').attr({
+										'id': 'listData',
+										'data-role': 'listview',
+										'data-theme': 'a'}).appendTo('#displayAll');
+				
+				var key = localStorage.key(i);
+				var value = localStorage.getItem(key);
+				var obj = JSON.parse(value);
+				
+				for (var n in obj){
+					var makeSubli = $('<p></p>').html(obj[n][0] + "" + obj[n][1]).appendTo(makeLi);
+					
+				}			
+				var linksLi = $('<div></div>').attr('class', 'linksLi').appendTo(makeLi);
+				makeItemLink(localStorage.key(i), linksLi);			
+		}
+		alert("Appointments Retrived");
+		
+};
+
+var saveData = function(data, key){
+	if(!key){
+		var id= Math.floor(Math.random()*2037929902);
+		
+		}else{
+			id = key;
+			
+	}
+	var item = {};
+		item.apptName	= ["Appointment Name: ", $('#apptName').val()];
+		item.apptDate	= ["Appointment Date: ", $('#apptDate').val()];
+		item.email		= ["Email: ", $('#email').val()];
+		item.apptType	= ["Appointment Type: ", $('#apptType').val()];
+		item.itemName	= ["Item Name: ", $('#itemName').val()];
+		item.amount		= ["Item Value: ", $('#amount').val()];
+		item.comments	= ["Comments: ", $('#comments').val()];
+		
+		localStorage.setItem(id, JSON.stringify(item));
+		alert("Appointment Saved!");	
+}; 
+
+var editItem = function(key){
+		//grab the data from the item from local storage
+		var value = localStorage.getItem($(this).attr('key'));
+		var item = $.parseJSON(value);
+		
+		//populate the form fields with current localStorage values.
+		$('#apptName').val(item.apptName[1]);
+		$('#apptDate').val(item.apptDate[1]);
+		$('#email').val(item.email[1]);
+		$('#apptType').val(item.apptType[1]);
+		$('#itemName').val(item.itemName[1]);
+		$('#amount').val(item.amount[1]);
+		$('#comments').val(item.comments[1]);
+		$('#submit').val("Edit");
+		$('#submit').attr('key', $(this).attr('key'));
+		
+			alert("Edited Appt Saved!");
+			
+			
+		
+};		
+
+var	deleteItem = function (){
+	var ask = confirm("Are you sure you want to delete this appointment?");
+		if (ask === true){
+			localStorage.removeItem($(this).attr('key'));
+			alert("Appointment Deleted");
+			window.location.reload();
+		}else{
+			alert("Appointment was not deleted!");
+		}
+
+			
+};
+					
+var deleteData = function(){
+		var askAll = confirm("WARNING! This will delete ALL appointments! Press OK to continue.");	
+		if(localStorage.length === 0){
+			alert("There are no appointments!");
+
+		}else if(askAll){
+			localStorage.clear();
+			alert("All appointments deleted!");
+			}else{
+			
+				alert("Appointments were not deleted!");
+			return false;
+			
+
+
+		}
+
+};
+
 
