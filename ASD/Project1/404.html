@@ -1,0 +1,68 @@
+<!doctype html>
+<!-- 
+George Dacosta
+ASD 1304
+Project 1 
+404.html
+April 18, 2013
+-->
+
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+
+	<title>404</title>
+
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+
+	<!-- StyleSheets under here -->
+	
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<link href="css/barter.css" rel="stylesheet"/>	
+	<link rel="stylesheet" href="css/404.css"><content="on"/>
+
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+<!-- 	Error Page -->
+	<div data-role="page" id="404" data-theme="a">
+
+			<header data-role="header" data-position="fixed">
+				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
+				<div>
+					<a href="index.html#home" data-ajax="false"><img src="img/branding.png" id="brand2"></a>
+				</div>
+			</header>
+		<div id="404Body">
+			<h4>Nothing To See Here!</h4>			
+			<img src="img/404.jpg"id="404Image" alt="Error Image" />
+		</div>	
+			<footer data-role="footer" data-position="fixed" data-id="navBar">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="index.html#home" data-ajax="false" data-icon="home">Home</a></li>
+						<li><a href="index.html#addAppt" data-ajax="false" data-icon="plus">New</a></li>
+						<li><a href="index.html#info" data-ajax="false" data-icon="info">Info</a></li>
+			
+					</ul>
+				</nav>
+			</footer>
+
+	</div>
+
+
+		<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+</body>
+</html>
+
