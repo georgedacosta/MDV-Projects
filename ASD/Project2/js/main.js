@@ -2,7 +2,7 @@
 /*
 George Dacosta
 ASD 1304
-Project 1
+Project 2
 main.js
 April 18, 2013
 */
@@ -120,6 +120,139 @@ $('#credits').on('pageinit', function(){
 $('#reset').on('click', function(){
 	window.location.reload();
 });
+
+$('#xhrPage').on('pageinit', function(){
+	
+});
+
+$('#xmlPage').on('pageinit', function(){
+});
+
+$('#xmlDataBtn').on('click', function(){
+
+	$.ajax({
+		url:		'xhr/data.xml',
+		type:		'GET',
+		dataType:	'xml',
+		success:	function(response){
+		alert("XML request received.");
+		console.log(response);
+		$(response).find("item").each(function(){ 
+
+						var apptName = $(this).find('apptName').text(),
+							apptDate = $(this).find('apptDate').text(),
+							email = $(this).find('email').text(),
+							phone = $(this).find('phone').text(),
+							apptType = $(this).find('apptType').text(),
+							itemName = $(this).find('itemName').text(),
+							amount = $(this).find('amount').text(),
+							comments = $(this).find('comments').text();
+						$('<div data-role="content">'+ '<ul data-role="listview">' + 
+							'<li>' +
+							'<h3>' + 'Appointment Name: ' + apptName + '</h3>' +
+							'<p>' + 'Appointment Date: ' + apptDate + '</p>' +
+							'<p>' + 'Email: ' + email + '</p>' +
+							'<p>' + 'Phone: ' + phone + '</p>' +
+							'<p>' + 'Appointment Type: ' + apptType + '</p>' +
+							'<p>' + 'Item Name: ' + itemName + '</p>' +
+							'<p>' + 'Item Value: ' + amount + '</p>' +
+							'<p>' + 'Comments: ' + comments + '</p>' + 
+							'</li>' + '</ul>' + '</div>').appendTo('#xmlData');
+			});
+			
+	}
+});
+		alert("XML Data Loaded");
+});
+
+$('#jsonPage').on("pageinit", function(){
+	
+});
+
+$('#jsonDataBtn').on("click", function(){
+	
+		$.ajax({
+		url:		'xhr/data.json',
+		type:		'GET',
+		dataType:	'json',
+		success:	function(response){
+		alert("JSON Request Received.");
+			for (var i in response.items){
+				var items = response.items[i];
+					
+					$('<div data-role="content">'+ '<ul data-role="listview">' + 
+						'<li>' +
+						'<h3>' + "Appointment Name: " + items.apptName + '</h3>' +
+						'<p>' + "Appointment Date: " + items.apptDate + '</p>' +
+						'<p>' + "Email: " + items.email + '</p>' +
+						'<p>' + "Phone: " + items.phone + '</p>' +
+						'<p>' + "Appointment Type: " + items.apptType + '</p>' +
+						'<p>' + "Date: " + items.date + '</p>' +
+						'<p>' + "Item Value: " + items.amount + '</p>' +
+						'<p>' + "comments: " + items.comments + '</p>' + 
+						'</li>' + '</ul>' + '</div>').appendTo('#jsonData');
+			};
+			console.log(response);
+		}
+	
+	});
+			alert("JSON Data Loaded");
+
+});
+
+$('#csvPage').on("pageinit", function(){
+	
+});
+
+$('#csvDataBtn').on("click", function(){
+	
+		$.ajax({
+		url:		'xhr/data.csv',
+		type:		'GET',
+		dataType:	'text',
+		success:	function(response){
+		alert("CSV Request Received.");
+			var csvData = response.split(/\r\n|\n/),
+				dataSep = csvData[0].split('|'),
+				type = [];
+			for(var i=1; i<csvData.length; i++){
+				var data = csvData[i].split('|');
+				if (data.length == dataSep.length){
+					var items = [];
+					for (var j=0; j<dataSep.length; j++){
+						items.push(data[j]);
+					}
+					type.push(items);
+				}
+			}
+			for(var k=0; k<type.length; k++){
+				var item = type[k];	
+								
+					$('<div data-role="content">'+ '<ul data-role="listview">' + 
+						'<li>' +
+						'<h3>' + "Appointment Name: " + item[0]+ '</h3>' +
+						'<p>' + "Appointment Date: " + item[1] + '</p>' +
+						'<p>' + "Email: " + item[2] + '</p>' +
+						'<p>' + "Phone: " + item[3] + '</p>' +
+						'<p>' + "Appointment Type: " + item[4] + '</p>' +
+						'<p>' + "Item Name: " + item[5]+ '</p>' +
+						'<p>' + "Item Value: " + item[6] + '</p>' +
+						'<p>' + "Comments: " + item[7] + '</p>' + 
+						'</li>' + '</ul>' + '</div>').appendTo('#csvData');
+			};
+			console.log(response);
+		}
+	
+	});
+			alert("CSV Data Loaded");
+			
+
+});
+
+
+
+
+
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
 
