@@ -21,11 +21,6 @@ $('#delAll').on("click", function(){
 	deleteData();
 });
 
-/*
-('#dispAll').on('pagecreate', function(){
-
-});
-*/
 
 $('dispAll').on("pageinit", function(){
 
@@ -49,7 +44,7 @@ $('#addAppt').on('pageinit', function(){
 			},
 			submitHandler: function() {
 				var data = myForm.serializeArray();
-				saveData($('#submit').attr('key'));		
+				saveData(data, $('#submit').attr('data-key'));
 			}					
 			
 		});
@@ -76,14 +71,10 @@ var saveData = function(data, key){
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Appointment Saved!");
 		location.reload();
-		console.log(this.key);
 	}; 
 	
 });
 
-$('#editItemBtn').on('click', function(){
-	editItem();
-});
 
 $('#aType').on('pageinit', function(){
 		
@@ -121,7 +112,6 @@ $('#reset').on('click', function(){
 	window.location.reload();
 });
 
-//The functions below can go inside or outside the pageinit function for the page in which it is needed.
 
 var autofillData = function (){
 	console.log("autofill Fired");
@@ -134,16 +124,21 @@ var autofillData = function (){
 };
 
 var makeItemLink = function(key, linksLi){
+	console.log('Item Key = ' + key);
 	var editLink = $('<a></a>').attr({
 			"href": "#addAppt",
 			"id": "editItemBtn",
 			"data-role": "button",
 			"data-mini": "true",
 			"data-inline": "true",
-			"key": key			
+			"data-key": key			
 			})
 			.html('Edit Appt')
-			.appendTo(linksLi).on("click", editItem);
+			.appendTo(linksLi).on("click", function() {
+				console.log('edit button clicked!');
+				console.log('Clicked Key = ' + $(this).attr('data-key'));
+				editItem($(this).attr('data-key'));
+			});
 			
 	var deleteLink = $('<a></a>').attr({
 			"href": "#",
@@ -190,9 +185,9 @@ var getData = function(key){
 
 var editItem = function(key){
 		//grab the data from the item from local storage
-		var value = localStorage.getItem($(this).attr('key'));
+		var value = localStorage.getItem(key);
 		var item = $.parseJSON(value);
-		console.log(this.key);
+		console.log('EditItemFunction Key = ' + key);
 		
 		//populate the form fields with current localStorage values.
 		$('#apptName').val(item.apptName[1]);
@@ -205,13 +200,8 @@ var editItem = function(key){
 		$('#comments').val(item.comments[1]);
 		
 		$('#submit').val("Edit");
-		$('#submit').attr('key', $(this).attr('key'));
-		console.log(key);
-		
-			
-			
-			
-		
+		$('#submit').attr('data-key', key);
+		console.log('SubmitButton Key = ' + $('#submit').attr('data-key'));
 };		
 
 var	deleteItem = function (){
