@@ -3,7 +3,7 @@
 <!--
 George Dacosta
 ASD 1304
-Project 1
+Project 2
 index.html
 April 19, 2013
 -->
@@ -42,6 +42,10 @@ April 19, 2013
 			</section>
 			<h4> Barter This! Don't barter your time away!</h4>
 			<a href="#addAppt" ><img src="img/addItemCta.png" id="addItemCta" alt="Add Appointment Image" /></a>
+			<section  data-role="content" id="xhrButton" data-theme="a">
+				
+                    <a href="#xhrPage" id="xhrBtn" data-role="button" data-theme="a" data-transition="flip">XHR Data</a>
+             </section>
 
 			<section data-role="content" data-theme="a">
 				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder ="Filter Appointments" data-theme="a">
@@ -72,7 +76,130 @@ April 19, 2013
 			
 
 		</section>
+
+		<section data-role="page" id="xhrPage" data-theme="a">
+			
+			<header data-role="header" data-position="fixed">
+				
+				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
+				<section>
+					<a href="#home"><img src="img/branding.png" class="brand2" alt="Logo Image"></a>
+				</section>
+			</header>
+			<section data-role="content" data-theme="a">
+				<section data-role="controlgroup">
+				    <a href="#csvPage" id="csvDataBtn" data-role="button" data-theme="a" data-transition="flip">CSV Data</a>
+                    <a href="#jsonPage" id="jsonDataBtn" data-role="button" data-theme="a" data-transition="flip">JSON Data</a>
+                    <a href="#xmlPage" id="xmlDataBtn" data-role="button" data-theme="a" data-transition="flip">XML Data</a>
+
+				
+				</section>
+			
+			</section>
+			<footer data-role="footer" data-position="fixed" data-id="navBar">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#addAppt"  data-icon="plus">New</a></li>
+						<li><a href="#info" data-icon="info">Info</a></li>
+			
+					</ul>
+				</nav>
+			</footer>
+				
+			
+
+		</section>
 		
+		<section data-role="page" id="xmlPage" data-theme="a">
+			
+			<header data-role="header" data-position="fixed">
+				
+				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
+				<section>
+					<a href="#home"><img src="img/branding.png" class="brand2" alt="Logo Image"></a>
+					<h1>XML Response</h1>			
+				</section>
+			</header>
+			<section data-role="content" id="xmlContent">
+				<div id="xmlData" data-role="listview">
+				</div>	
+			</section>
+			
+			<footer data-role="footer" data-position="fixed" data-id="navBar">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#addAppt"  data-icon="plus">New</a></li>
+						<li><a href="#info" data-icon="info">Info</a></li>
+			
+					</ul>
+				</nav>
+			</footer>
+				
+			
+
+		</section>
+		
+		<section data-role="page" id="jsonPage" data-theme="a">
+			
+			<header data-role="header" data-position="fixed">
+				
+				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
+				<section>
+					<a href="#home"><img src="img/branding.png" class="brand2" alt="Logo Image"></a>
+					<h1>JSON Response</h1>
+				</section>
+			</header>
+			<section data-role="content" id="jsonContent">
+				<section id="jsonData" data-role="listview">
+				</section>	
+			</section>
+			
+			<footer data-role="footer" data-position="fixed" data-id="navBar">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#addAppt"  data-icon="plus">New</a></li>
+						<li><a href="#info" data-icon="info">Info</a></li>
+			
+					</ul>
+				</nav>
+			</footer>
+				
+			
+
+		</section>
+		
+		<section data-role="page" id="csvPage" data-theme="a">
+			
+			<header data-role="header" data-position="fixed">
+				
+				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
+				<section>
+					<a href="#home"><img src="img/branding.png" class="brand2" alt="Logo Image"></a>
+					<h1>CSV Response</h1>
+				</section>
+			</header>
+			<section data-role="content" id="csvContent">
+				<section id="csvData" data-role="listview">
+				</section>	
+			</section>
+			
+			<footer data-role="footer" data-position="fixed" data-id="navBar">
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="home">Home</a></li>
+						<li><a href="#addAppt"  data-icon="plus">New</a></li>
+						<li><a href="#info" data-icon="info">Info</a></li>
+			
+					</ul>
+				</nav>
+			</footer>
+				
+			
+
+		</section>
 <!-- 	Start Appointment Type Page	 -->
 		<section data-role="page" id="aType" >
 			<header data-role="header" data-position="fixed">
