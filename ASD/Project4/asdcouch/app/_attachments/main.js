@@ -7,10 +7,28 @@ main.js
 May 2, 2013
 */
 
-$('#home').on('pageinit',function(){	
+/*
+$(document).on("mobileinit", function () { 
+	$.mobile.ajaxEnabled = false; 
+});
+*/
+
+var newAppt = false;
+
+$('#addItemCta').on('click', function(){
+	newAppt = true;
 });
 
-$('#home').on('pageshow', function(){
+
+$('#newAppt').on('click', function(){
+	newAppt = true;
+});
+
+
+$('#home').on('pagebeforeshow',function(){	
+});
+
+$('#home').on('pagebeforeshow', function(){
 	$('#couchBtn').on('click', function() {getData('items')		
 	});
 	
@@ -34,22 +52,43 @@ $('#home').on('pageshow', function(){
 		
 	});
 });			
+
+$('#home').on('pagehide', function(){
+	$('#couchBtn').off('click');	
+	$('#salesBtn').off('click');	
+	$('#purchaseBtn').off('click');	
+	$('#appraisalBtn').off('click');	
+	$('#tradeBtn').off('click');	
+	$('#deliveryBtn').off('click');
+		
+});
 	
 
 $('#delAll').on("click", function(){
 	deleteData();
 });
 
-$('#display').on('pageinit', function(){
+$('#display').on('pagebeforeshow', function(){
+
 	
 });
 
-$('#addAppt').on('pageinit', function(){
-	$('#submit').on("click", function(){
-		saveData();
+$('#addAppt').on('pagebeforeshow', function(){
 
-	});	
+	if(newAppt === true){
+		$('#submit').on("click", function(){
+			saveData();
 
+		});	
+	}		
+});
+
+$('#addAppt').on('pagehide', function(){
+	$('#submit').off("click");
+
+});	
+
+/*
 	var id = id;
 		var myForm = $('#addApptForm'),
 			errorsLink =$('#errorsLink');
@@ -74,32 +113,35 @@ $('#addAppt').on('pageinit', function(){
 			
 		});
 	
+*/
 	
-});
 
 
-$('#credits').on('pageinit', function(){
+
+$('#credits').on('pagebeforeshow', function(){
 		
 });
 
 $('#reset').on('click', function(){
-	window.location.reload();
+window.location.reload();
+	
 });
 
+
 var saveData = function(key, rev){
-console.log("saveData fired key: " + key + "rev: " + rev );
 	var doc = {};
 	if(!key ){
 		var id = 'item:' + $('#apptType').val() + ':' + Math.floor(Math.random()*2037929902);
 		
 		} else {
 		var	id = key;
-		doc._rev = rev;
+		var revision = rev;
 			
 	}
-	$('#submit').attr('data-key', id);
-	console.log(id);
+/* 	$('#submit').attr('data-key', id); */
+	//console.log("saveData id = "+id);
 		doc._id			= id;
+		doc._rev 		= revision;
 		doc.apptName	= ["Appointment Name: ", $('#apptName').val()];
 		doc.apptDate	= ["Appointment Date: ", $('#apptDate').val()];
 		doc.email		= ["Email: ", $('#email').val()];
@@ -111,19 +153,17 @@ console.log("saveData fired key: " + key + "rev: " + rev );
 		
 			$.couch.db('asdproject').saveDoc(doc, {
 				success: function(data){
-				console.log(data);
+				//console.log("saveData couchDB success = "+);
 					alert('Appointment Added');
 					getData('items');
 										
 				}								
 			});
 					
-				$('#submit').removeAttr('key');
 				
 	}; 
 	
 	
-	//change version of jquery.
 var getData = function(key){
 	$('#displayData').empty();
 	$.couch.db('asdproject').view('app/'+key,{
@@ -185,39 +225,44 @@ var getData = function(key){
 	$.mobile.changePage('#display');
 };		
 
-var editItem = function(key, rev){
+var editItem = function(){
+
 		//grab the data from the item from local storage
 		$.couch.db('asdproject').openDoc($(this).attr('data-key'),{
-			success: function(data){	
-			console.log("this is the id: " + data._id);	
-			console.log("this is the rev: " + data._rev);
-		console.log('EditItemFunction Key = ' + key);
+			success: function(george){	
+				console.log("start edit id =: " + george._id);	
+				console.log("start edit rev=: " + george._rev);
+				
+				//populate the form fields with current localStorage values.
+				$('#apptName').val(george.apptName[1]);
+				$('#apptDate').val(george.apptDate[1]);
+				$('#email').val(george.email[1]);
+				$('#phone').val(george.phone[1]);
+				$('#apptType').val(george.apptType[1]);
+				$('#itemName').val(george.itemName[1]);
+				$('#amount').val(george.amount[1]);
+				$('#comments').val(george.comments[1]);
 		
-		//populate the form fields with current localStorage values.
-		$('#apptName').val(data.apptName[1]);
-		$('#apptDate').val(data.apptDate[1]);
-		$('#email').val(data.email[1]);
-		$('#phone').val(data.phone[1]);
-		$('#apptType').val(data.apptType[1]);
-		$('#itemName').val(data.itemName[1]);
-		$('#amount').val(data.amount[1]);
-		$('#comments').val(data.comments[1]);
+
+				newAppt = false;
+				if (newAppt === false){
+					setTimeout(function(){
+						$.mobile.changePage('#addAppt');
+					}, 1000);
+					$('#submit').on("click", function(){
+						
+						console.log("id on click =  " + george._id);	
+						console.log("rev on click " + george._rev);
+						saveData(george._id, george._rev);
+						console.log("id=: " + george._id + "rev= " + george._rev);
+					});
 		
-		$('#submit').closest('.ui-btn').hide();
-		$('#sub').empty();
-		var editButton = $('<input type="button" id="edit" data-theme="a" value="Save Edited Appointment"><input>');
-		$('#sub').append($(editButton));
-		editButton.button();
-		setTimeout(function(){
-			$.mobile.changePage('#addAppt');
-			}, 1000);
-			$('#edit').click(function(){
-				saveData(data._id, data._rev);
-				console.log("id=: " + data._id + "rev= " + data._rev);
-			});
 				}
+								
+			}
+
 		});
-	};	
+};	
 
 var deleteItem = function(){
 		var ask = confirm("Are you sure you want to delete this appointment?");
