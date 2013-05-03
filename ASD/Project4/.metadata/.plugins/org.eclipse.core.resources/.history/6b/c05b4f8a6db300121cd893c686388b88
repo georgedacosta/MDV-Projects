@@ -1,8 +1,6 @@
 function (doc) {
-	if (doc._id.substr(0, 4) === "item"){
-		emit(doc._id.substr(4), {
-			"id": doc._id,
-			"rev": doc._rev,
+	if (doc._id.substr(0, 13) === "item:delivery"){
+		emit(doc._id.substr(13), {
 			"apptName": doc.apptName,
 			"apptDate": doc.apptDate,
 			"email": doc.email,

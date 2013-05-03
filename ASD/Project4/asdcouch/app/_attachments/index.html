@@ -3,9 +3,9 @@
 <!--
 George Dacosta
 ASD 1304
-Project 3
+Project 4
 index.html
-April 25, 2013
+May 2, 2013
 -->
 
 <html>
@@ -42,332 +42,60 @@ April 25, 2013
 			</section>
 			<h4> Barter This! Don't barter your time away!</h4>
 			<a href="#addAppt" ><img src="img/addItemCta.png" id="addItemCta" alt="Add Appointment Image" /></a>
-			<section  data-role="content" id="xhrButton" data-theme="a">
-				
-                    <a href="#xhrPage" id="xhrBtn" data-role="button" data-theme="a" data-transition="flip">XHR Data</a>
-             </section>
 
 			<section data-role="content" data-theme="a">
 				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder ="Filter Appointments" data-theme="a">
 					<li data-role="list-divider"  data-theme="a" >Browse Appointments By:</li>
-					<li><a href="#couchPage" id="couchBtn">All Appointments</a></li>
-					<li><a href="#salesPage" id="salesBtn">Sales</a></li>
-					<li><a href="#purchasePage" id="purchaseBtn">Purchase</a></li>
-					<li><a href="#appraisalPage" id="appraisalBtn">Appraisal</a></li>
-					<li><a href="#tradePage" id="tradeBtn">Trade</a></li>
-					<li><a href="#deliveryPage" id="deliveryBtn">Delivery</a></li>
+					<li><a href="#" id="couchBtn" data-transition="flip">All Appointments</a></li>
+					<li><a href="#" id="salesBtn" data-transition="flip">Sales</a></li>
+					<li><a href="#" id="purchaseBtn" data-transition="flip">Purchase</a></li>
+					<li><a href="#" id="appraisalBtn" data-transition="flip">Appraisal</a></li>
+					<li><a href="#" id="tradeBtn">Trade</a></li>
+					<li><a href="#" id="deliveryBtn" data-transition="flip">Delivery</a></li>
 				</ul>
 							
 			</section>
 			<section data-role="content" data-mini="false" data-type="horizontal" data-theme="a">
-				<a href="#dispAll" data-role="button" id= "dispAllBtn">Display All</a>
 				<a href="#home" data-role="button" id="delAll">Delete All</a>
 			</section>	
 			<footer data-role="footer" data-position="fixed" data-id="navBar">
 				<nav data-role="navbar">
 					<ul>
 						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#addAppt"  data-icon="plus">New</a></li>
+						<li><a href="#addAppt" id="newAppt" data-icon="plus">New</a></li>
 						<li><a href="#info" data-icon="info">Info</a></li>
 			
 					</ul>
 				</nav>
 			</footer>
-				
-			
-
-		</section>
-
-		<section data-role="page" id="xhrPage" data-theme="a">
-			
-			<header data-role="header" data-position="fixed">
-				
-				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
-				<section>
-					<a href="#home"><img src="img/branding.png" class="brand2" alt="Logo Image"></a>
-				</section>
-			</header>
-			<section data-role="content" data-theme="a">
-				<section data-role="controlgroup">
-				    <a href="#csvPage" id="csvDataBtn" data-role="button" data-theme="a" data-transition="flip">CSV Data</a>
-                    <a href="#jsonPage" id="jsonDataBtn" data-role="button" data-theme="a" data-transition="flip">JSON Data</a>
-                    <a href="#xmlPage" id="xmlDataBtn" data-role="button" data-theme="a" data-transition="flip">XML Data</a>
-
-				
-				</section>
-			
-			</section>
-			<footer data-role="footer" data-position="fixed" data-id="navBar">
-				<nav data-role="navbar">
-					<ul>
-						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#addAppt"  data-icon="plus">New</a></li>
-						<li><a href="#info" data-icon="info">Info</a></li>
-			
-					</ul>
-				</nav>
-			</footer>
-				
-			
-
 		</section>
 		
-		<section data-role="page" id="couchPage" data-theme="a">
-			
+		<section data-role="page" id="display" data-theme="a">
 			<header data-role="header" data-position="fixed">
-				
 				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
 				<section>
 					<a href="#home"><img src="img/branding.png" class="brand2" alt="Logo Image"></a>
-					<h1>All Appointments</h1>			
 				</section>
 			</header>
-			<section data-role="content" id="couchContent">
-				<div id="couchData">
-				</div>	
-			</section>
-			
-			<footer data-role="footer" data-position="fixed" data-id="navBar">
-				<nav data-role="navbar">
-					<ul>
-						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#addAppt"  data-icon="plus">New</a></li>
-						<li><a href="#info" data-icon="info">Info</a></li>
-			
-					</ul>
-				</nav>
-			</footer>
-				
-		</section>
-		
-		<section data-role="page" id="salesPage" data-theme="a">
-			
-			<header data-role="header" data-position="fixed">
-				
-				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
-				<section>
-					<a href="#home"><img src="img/branding.png" class="brand2" alt="Logo Image"></a>
-					<h1>Sales Appointments</h1>			
-				</section>
-			</header>
-			<section data-role="content" id="salesContent">
-				<div id="salesData">
-				</div>	
-			</section>
-			
-			<footer data-role="footer" data-position="fixed" data-id="navBar">
-				<nav data-role="navbar">
-					<ul>
-						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#addAppt"  data-icon="plus">New</a></li>
-						<li><a href="#info" data-icon="info">Info</a></li>
-			
-					</ul>
-				</nav>
-			</footer>
-				
-		</section>
-		
-		<section data-role="page" id="purchasePage" data-theme="a">
-			
-			<header data-role="header" data-position="fixed">
-				
-				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
-				<section>
-					<a href="#home"><img src="img/branding.png" class="brand2" alt="Logo Image"></a>
-					<h1>Purchase Appointments</h1>			
-				</section>
-			</header>
-			<section data-role="content" id="purchaseContent">
-				<div id="purchaseData" data-role="listview">
-				</div>	
-			</section>
-			
-			<footer data-role="footer" data-position="fixed" data-id="navBar">
-				<nav data-role="navbar">
-					<ul>
-						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#addAppt"  data-icon="plus">New</a></li>
-						<li><a href="#info" data-icon="info">Info</a></li>
-			
-					</ul>
-				</nav>
-			</footer>
-				
-		</section>
-		
-		<section data-role="page" id="appraisalPage" data-theme="a">
-			
-			<header data-role="header" data-position="fixed">
-				
-				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
-				<section>
-					<a href="#home"><img src="img/branding.png" class="brand2" alt="Logo Image"></a>
-					<h1>Appraisal Appointments</h1>			
-				</section>
-			</header>
-			<section data-role="content" id="appraisalContent">
-				<div id="appraisalData" data-role="listview">
-				</div>	
-			</section>
-			
-			<footer data-role="footer" data-position="fixed" data-id="navBar">
-				<nav data-role="navbar">
-					<ul>
-						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#addAppt"  data-icon="plus">New</a></li>
-						<li><a href="#info" data-icon="info">Info</a></li>
-			
-					</ul>
-				</nav>
-			</footer>
-						
-		</section>
-		
-		<section data-role="page" id="tradePage" data-theme="a">
-			
-			<header data-role="header" data-position="fixed">
-				
-				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
-				<section>
-					<a href="#home"><img src="img/branding.png" class="brand2" alt="Logo Image"></a>
-					<h1>Trade Appointments</h1>			
-				</section>
-			</header>
-			<section data-role="content" id="tradeContent">
-				<div id="tradeData" data-role="listview">
-				</div>	
-			</section>
-			
-			<footer data-role="footer" data-position="fixed" data-id="navBar">
-				<nav data-role="navbar">
-					<ul>
-						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#addAppt"  data-icon="plus">New</a></li>
-						<li><a href="#info" data-icon="info">Info</a></li>
-			
-					</ul>
-				</nav>
-			</footer>
-						
-		</section>
-		
-		<section data-role="page" id="deliveryPage" data-theme="a">
-			
-			<header data-role="header" data-position="fixed">
-				
-				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
-				<section>
-					<a href="#home"><img src="img/branding.png" class="brand2" alt="Logo Image"></a>
-					<h1>Delivery Appointments</h1>			
-				</section>
-			</header>
-			<section data-role="content" id="deliveryContent">
-				<div id="deliveryData" data-role="listview">
-				</div>	
-			</section>
-			
-			<footer data-role="footer" data-position="fixed" data-id="navBar">
-				<nav data-role="navbar">
-					<ul>
-						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#addAppt"  data-icon="plus">New</a></li>
-						<li><a href="#info" data-icon="info">Info</a></li>
-			
-					</ul>
-				</nav>
-			</footer>
-						
-		</section>
-		<section data-role="page" id="xmlPage" data-theme="a">
-			
-			<header data-role="header" data-position="fixed">
-				
-				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
-				<section>
-					<a href="#home"><img src="img/branding.png" class="brand2" alt="Logo Image"></a>
-					<h1>XML Response</h1>			
-				</section>
-			</header>
-			<section data-role="content" id="xmlContent">
-				<div id="xmlData" data-role="listview">
-				</div>	
-			</section>
-			
-			<footer data-role="footer" data-position="fixed" data-id="navBar">
-				<nav data-role="navbar">
-					<ul>
-						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#addAppt"  data-icon="plus">New</a></li>
-						<li><a href="#info" data-icon="info">Info</a></li>
-			
-					</ul>
-				</nav>
-			</footer>
-				
-			
-
-		</section>
-		
-		<section data-role="page" id="jsonPage" data-theme="a">
-			
-			<header data-role="header" data-position="fixed">
-				
-				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
-				<section>
-					<a href="#home"><img src="img/branding.png" class="brand2" alt="Logo Image"></a>
-					<h1>JSON Response</h1>
-				</section>
-			</header>
-			<section data-role="content" id="jsonContent">
-				<section id="jsonData" data-role="listview">
+			<section data-role="content" id="displayContent">
+				<section id="dynContent">
+					<div id="displayData" data-role="collapsible-set" data-inset="true" data-theme="a">
+							<div></div>
+					</div>	
 				</section>	
 			</section>
-			
 			<footer data-role="footer" data-position="fixed" data-id="navBar">
 				<nav data-role="navbar">
 					<ul>
 						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#addAppt"  data-icon="plus">New</a></li>
+						<li><a href="#addAppt" id="newAppt" data-icon="plus">New</a></li>
 						<li><a href="#info" data-icon="info">Info</a></li>
 			
 					</ul>
 				</nav>
 			</footer>
-				
-			
-
 		</section>
-		
-		<section data-role="page" id="csvPage" data-theme="a">
-			
-			<header data-role="header" data-position="fixed">
-				
-				<a href="#" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
-				<section>
-					<a href="#home"><img src="img/branding.png" class="brand2" alt="Logo Image"></a>
-					<h1>CSV Response</h1>
-				</section>
-			</header>
-			<section data-role="content" id="csvContent">
-				<section id="csvData" data-role="listview">
-				</section>	
-			</section>
-			
-			<footer data-role="footer" data-position="fixed" data-id="navBar">
-				<nav data-role="navbar">
-					<ul>
-						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#addAppt"  data-icon="plus">New</a></li>
-						<li><a href="#info" data-icon="info">Info</a></li>
-			
-					</ul>
-				</nav>
-			</footer>
-				
-			
 
-		</section>
 <!-- 		Begin add appointment page -->
 		<section data-role="page" id="addAppt" data-theme="a">
 			<header data-role="header" data-position="fixed">
@@ -378,7 +106,7 @@ April 25, 2013
 			</header>
 			
 			<section data-role="content">
-				<form action="#" id="addApptForm">
+				<form action="" id="addApptForm">
 					<section data-role="fieldcontain">
 						<label for="apptName">Appointment Name: *Required</label>
 						<input type="text" name="apptName" id="apptName" placeholder="Joe Shmo" class="required"/>
@@ -442,7 +170,7 @@ April 25, 2013
 				<nav data-role="navbar">
 					<ul>
 						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#addAppt"  data-icon="plus">New</a></li>
+						<li><a href="#addAppt" id="newAppt" data-icon="plus">New</a></li>
 						<li><a href="#info" data-icon="info">Info</a></li>
 			
 					</ul>
@@ -481,7 +209,7 @@ April 25, 2013
 				<nav data-role="navbar">
 					<ul>
 						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#addAppt"  data-icon="plus">New</a></li>
+						<li><a href="#addAppt" id="newAppt" data-icon="plus">New</a></li>
 						<li><a href="#info" data-icon="info">Info</a></li>
 			
 					</ul>
@@ -524,7 +252,7 @@ April 25, 2013
 				<nav data-role="navbar">
 					<ul>
 						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#addAppt"  data-icon="plus">New</a></li>
+						<li><a href="#addAppt" id="newAppt" data-icon="plus">New</a></li>
 						<li><a href="#info" data-icon="info">Info</a></li>
 			
 					</ul>
@@ -560,7 +288,7 @@ April 25, 2013
 				<nav data-role="navbar">
 					<ul>
 						<li><a href="#home" data-icon="home">Home</a></li>
-						<li><a href="#addAppt"  data-icon="plus">New</a></li>
+						<li><a href="#addAppt" id="newAppt" data-icon="plus">New</a></li>
 						<li><a href="#info" data-icon="info">Info</a></li>
 			
 					</ul>
@@ -593,9 +321,10 @@ April 25, 2013
 	
 <!-- scripts -->
 			<script src="js/libs/jquery-1.9.1.min.js"></script>
+			<script src="js/libs/jquery-migrate-1.1.1.min.js"></script>
 			<script src="js/libs/jquery.mobile-1.3.1.min.js"></script>
 			<script src="js/libs/jquery.validate.min.js"></script>
-			<script src="js/json.js"></script>
+			<script src="js/libs/jquery.couch.js"></script>
 			<script src="main.js"></script>	
 		</body>
 </html>
