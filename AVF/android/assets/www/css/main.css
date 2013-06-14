@@ -2,7 +2,7 @@
 George Dacosta
 AVF 1306
 main.css
-june 06, 2013
+june 14, 2013
 */
 
 html {
@@ -12,17 +12,13 @@ html {
 	
 
 body {
-/*
-	min-height: 100%;
-	min-width: 100%;
-*/
+
 	background-color: #797b7f;	
-	background-image: url(../img/ystadium.png);
+	background-image: url(../img/yankees.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: top;
-	background-size: cover;
-	
+	background-size: cover;	
 
 }
 
@@ -64,7 +60,7 @@ li {
 
 nav {
 	background-color: rgba(85,86,89,0.25);
-	margin-top: 345px;
+	margin-top: 175px;
 	margin-right: 15px;
 	height:auto;
 	width: auto;
@@ -94,3 +90,153 @@ img#homeImg {
 	width: 30px;
 }
 
+/* _________________________________________Research Page_______________________________________________ */
+
+.rDiv {
+	width: 95%;
+	border: 1px solid #ffffff;
+	background-color: rgba(85,86,89,0.95);
+	box-shadow: 0 2px 5px rgba(0,0,0,.8);
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	
+}
+
+.weekTitle {
+
+	margin: 0 0 10px 0;
+	color: #000000;
+		
+}
+
+/* _________________________________________Weather Page_______________________________________________ */
+
+.currentDiv{
+	width: 95%;
+	border: 1px solid #ffffff;
+	background-color: rgba(255,255,255,.65);
+	box-shadow: 0 2px 5px rgba(0,0,0,.8);
+	margin-left: 15px;
+	margin-right: 25px;
+	margin-bottom: 10px;
+
+}
+
+.ccHead {
+	padding-top: 10px 0 0 10px;
+	margin: 0 0 10px 0;
+	color: navy;
+	
+}
+.ccImg {
+	height: 60px;
+	width: 60px;
+	margin-top: -15px;
+}
+
+.ccTime {
+	
+	border: 1px solid #ffffff;
+	background-color: rgba(255,255,255,.65);
+	box-shadow: 0 2px 5px rgba(0,0,0,.8);
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	
+}
+.obTime {
+	color: red;
+}
+.fcDiv {
+	width: 95%;
+	border: 1px solid #ffffff;
+	background-color: rgba(255,255,255,.65);
+	box-shadow: 0 2px 5px rgba(0,0,0,.8);
+	margin-left: 15px;
+	margin-right: 25px;
+	margin-bottom: 10px;
+}
+.fcDiv:first-child {
+	border: none;
+	box-shadow: none;
+	margin: 0;
+	padding: 20px 0 0 0;
+	background: none;
+}
+.fcTitle {
+	padding-top: 10px 0 0 10px;
+	margin: 0 0 10px 0;
+	color: #000000;
+		
+}
+
+
+/* _________________________________________Instagram Page_______________________________________________ */
+
+.igDiv {
+	width: 95%;
+	border: 1px solid #ffffff;
+	background-color: rgba(255,255,255,.65);
+	box-shadow: 0 2px 5px rgba(0,0,0,.8);
+	margin-right: 25px;
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+
+.igDiv:last-child{
+	margin-bottom: 5px;
+}
+
+.igName {
+	color: #000000;
+	margin-top: 10px;
+	
+	
+}
+
+.igHead {
+	color: #ffffff;
+	
+}
+
+.igImg {
+	height: 60px;
+	width: 60px;
+	margin-top: 2px;
+	margin-left: 2px;
+}
+.igUser{
+	margin-left: 5px;
+}
+
+.igText{
+	margin-left: 5px;
+}
+
+.igLikes{
+	margin-left: 5px;
+	color: blue;
+}
+
+
+@media only screen
+and (min-device-width : 481px)
+and (max-device-width : 768px)  { 
+	
+	body{
+		width: 90%;
+		margin: 0 auto;
+		min-width: 500px;
+		max-width: 768px;
+		
+	}
+	
+@media only screen and (max-width:480px){
+	body {
+	width: 90%;
+	margin: 0 auto;
+	min-width: 320px;
+	max-width: 480px;
+}
+	

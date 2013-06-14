@@ -1,0 +1,43 @@
+{
+	"week1": {
+		"wk":["Week:", "One"],
+		"q1": ["Question 1:", "Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?"],
+		"q2": ["Question 2:", "Visit Programmableweb.com and search for JSON-P data sources. Why would we need JSON-P, specifically?"],
+		"q3":	["Question 3:", "Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?"],
+		"q4": 	["Question 4:", "Please describe any design and functionality intentions you may have for your Demo app components this month."],
+		"q5":	["Question 5:", "Briefly describe some past 'lessons learned' regarding workflow as it relates to research, design, development, etc."],
+		"r1":		["Response 1:", "Using Twitter’s OAuth lets the user create an account and login with their Twitter login information. With less information having to be keyed in, this ability is useful for users on mobile devices. There is also a sense of trust with a big name such as Twitter, this would lend credibility and give the user a sense of security. For payments using a PayPal API with Twitter gives users more time saving, and trusted benefits."],
+		"r2":	["Response 2:", "JSON-P is necessary in order to pull data from servers, while working around the same origin policy."],
+		"r3":	["Response 3:", "My immediate thought was weather and geolocation or maps and geolocation. Another would be the camera along with Flickr or Pinterest."],
+		"r4":	["Response 4:", "Am researching working with some of the different Google API’s, Google places along with geolocation for example. Something along the lines of a map showing all of the sports shops within a certain mile radius. "],
+		"r5":	["Response 5:", "The biggest lesson learned for me, is time management, and is something that I still struggle with a bit. There just never seem to be enough hours in the day. Have started mapping out ideas on paper, and have found that this gives me a bit more direction in my research."]		
+		
+	},
+		
+
+	"week2": {
+		"wk":["Week:", "Two"],
+		"q1": ["Question 1:", "What are some of the ways that you could change your HTML on your Demo app to be more accessible? (Remember, you can use the Section tag with jQuery, for instance)"],
+		"q2": ["Question 2:", "Visit a video service on the web (like YouTube) and search for Screen Reader Demo and Mobile Screen Reader - what are some of the common frustrations (or common support mechanisms) that you see among the examples that are given - how could you fix them (or use them)?"],
+		"q3":	["Question 3:", "Devices, please list two devices, and some of their features, that are made specifically to support Accessibility."],
+		"q4": 	["Question 4:", "Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility."],
+		"r1":	["Response 1:", "Not yet available, please check back soon!"],
+		"r2":	["Response 2:", "Not yet available, please check back soon!"],
+		"r3":	["Response 3:", "Not yet available, please check back soon!"],
+		"r4":	["Response 4:", "Not yet available, please check back soon!"]
+		
+	},
+	"week3": {
+		"wk":["Week:", "Three"],
+		"q1": ["Question 1:", "What are the 'top selling' app categories in the U.S.? Japan? Great Britain?"],
+		"q2": ["Question 2:", "Based on your three answers above, what might you infer about each of the markets listed?"],
+		"q3":	["Question 3:", "What is the average cost and bandwidth limits per user (in general) in each of the three markets? How may this impact development?"],
+		"q4": 	["Question 4:", "And, finally, what would be your suggested strategy in project topic and global market choice? Feel free to have a first and second choice."],
+		"r1":	["Response 1:", "Not yet available, please check back soon!"],
+		"r2":	["Response 2:", "Not yet available, please check back soon!"],
+		"r3":	["Response 3:", "Not yet available, please check back soon!"],
+		"r4":	["Response 4:", "Not yet available, please check back soon!"]
+		
+	}
+				
+}
