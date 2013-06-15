@@ -23,22 +23,19 @@ body {
 }
 
 h1 {
-/* 	font-family: "Arial Black", Gadget, sans-serif; */
 	color: #ffffff;	
-	margin-left: 10px;
+	margin-left: 5px;
 }
 
 h2 {
-/* 	font-family: "Arial Black", Gadget, sans-serif; */
 	color: #ffffff;	
-	margin-left: 10px;
+	margin-left: 5px;
 }
 
 h3 {
-/* 	font-family: "Arial Black", Gadget, sans-serif; */
 	color: #ffffff;	
 	margin-top: -18px;
-	margin-left: 10px;
+	margin-left: 5px;
 	
 }
 
@@ -60,7 +57,7 @@ li {
 
 nav {
 	background-color: rgba(85,86,89,0.25);
-	margin-top: 175px;
+	margin-top: 35;
 	margin-right: 15px;
 	height:auto;
 	width: auto;
@@ -69,6 +66,11 @@ nav {
 	
 }
 
+div#responseImg{
+	height: auto;
+	width: auto;
+	float: left;
+}
 
 ul#menuH li {
 	min-height: 40px;
@@ -89,13 +91,26 @@ img#homeImg {
 	height: 30px;
 	width: 30px;
 }
+button {
+	width: 95%;
+	height: 50px;
+	border: 1px solid #ffffff;
+	background-color: rgba(255,255,255,.25);
+	box-shadow: 0 2px 5px rgba(0,0,0,.8);
+	margin-right: 25px;
+	margin-left: 15px;
+	margin-bottom: 5px;
+	font-size: 125%;
+	color: #000000;
+
+}
 
 /* _________________________________________Research Page_______________________________________________ */
 
 .rDiv {
 	width: 95%;
 	border: 1px solid #ffffff;
-	background-color: rgba(85,86,89,0.95);
+	background-color: rgba(255,255,255,.35);
 	box-shadow: 0 2px 5px rgba(0,0,0,.8);
 	margin-left: 15px;
 	margin-right: 15px;
@@ -115,7 +130,7 @@ img#homeImg {
 .currentDiv{
 	width: 95%;
 	border: 1px solid #ffffff;
-	background-color: rgba(255,255,255,.65);
+	background-color: rgba(255,255,255,.25);
 	box-shadow: 0 2px 5px rgba(0,0,0,.8);
 	margin-left: 15px;
 	margin-right: 25px;
@@ -138,7 +153,7 @@ img#homeImg {
 .ccTime {
 	
 	border: 1px solid #ffffff;
-	background-color: rgba(255,255,255,.65);
+	background-color: rgba(255,255,255,.25);
 	box-shadow: 0 2px 5px rgba(0,0,0,.8);
 	margin-left: 15px;
 	margin-right: 15px;
@@ -151,7 +166,7 @@ img#homeImg {
 .fcDiv {
 	width: 95%;
 	border: 1px solid #ffffff;
-	background-color: rgba(255,255,255,.65);
+	background-color: rgba(255,255,255,.25);
 	box-shadow: 0 2px 5px rgba(0,0,0,.8);
 	margin-left: 15px;
 	margin-right: 25px;
@@ -177,7 +192,7 @@ img#homeImg {
 .igDiv {
 	width: 95%;
 	border: 1px solid #ffffff;
-	background-color: rgba(255,255,255,.65);
+	background-color: rgba(255,255,255,.25);
 	box-shadow: 0 2px 5px rgba(0,0,0,.8);
 	margin-right: 25px;
 	margin-left: 15px;
@@ -219,24 +234,21 @@ img#homeImg {
 	color: blue;
 }
 
+@media only screen and (max-width:480px){
 
-@media only screen
-and (min-device-width : 481px)
-and (max-device-width : 768px)  { 
 	
 	body{
 		width: 90%;
 		margin: 0 auto;
-		min-width: 500px;
-		max-width: 768px;
+		min-width: 700px;
+		max-width: 1399px;
 		
 	}
-	
-@media only screen and (max-width:480px){
-	body {
-	width: 90%;
-	margin: 0 auto;
-	min-width: 320px;
-	max-width: 480px;
-}
-	
+	nav{
+		float: left;
+	}
+	div#responseImg{
+	display: none;
+	}
+
+}	
