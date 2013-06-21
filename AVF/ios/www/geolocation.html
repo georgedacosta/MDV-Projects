@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+George Dacosta
+AVF 1306
+geolocation.html
+June 17, 2013
+-->
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, width=device-width">
+	<meta name="HandheldFriendly" content="True"/>
+	<meta name="MobileOptimized" content="320"/>	
+	<title>Geolocation</title>
+<!-- 	<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" /> -->
+		<link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rest">
+
+	<div id="geoPg">
+		<header data-role="header" id="geoHead">
+			<a href="index.html" id="launchLink"><img src="img/home.png" id="homeImg" class="icon" alt="Home"/></a>
+
+			<h1>Geolocation</h1>
+		</header>
+		
+		
+		<section id="geoPop" class="map">
+			
+		
+		</section>
+		
+		<section id="hPop" class="map">
+		</section>
+		
+		
+		<button type="button" id="rmButton">Roadmap</button>
+		<button type="button" id="hybridButton">Satellite Map</button>
+		<button type="button" id="clearGeo">Clear</button>
+	</div>
+		
+	<script type="text/javascript" src="js/libs/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcLH2qcNs7Ow3U87S0cbR884WEuJ0e8gc&sensor=true"></script>	
+    <script type="text/javascript" src="cordova-2.7.0.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
