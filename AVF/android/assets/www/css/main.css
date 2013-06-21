@@ -13,7 +13,7 @@ html {
 
 body {
 
-	background-color: #797b7f;	
+	background-color: #13181C;	
 	background-image: url(../img/yankees.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -33,12 +33,14 @@ h2 {
 }
 
 h3 {
-	color: #ffffff;	
+	color: #000000;	
 	margin-top: -18px;
 	margin-left: 5px;
 	
 }
-
+h5 {
+	color: #ffffff;
+}
 
 a {
 	text-decoration: none;
@@ -67,9 +69,7 @@ nav {
 }
 
 div#responseImg{
-	height: auto;
-	width: auto;
-	float: left;
+	display: none;
 }
 
 ul#menuH li {
@@ -87,6 +87,9 @@ ul#menuH li {
 	
 }
 
+img#yankLogo{
+	display:none;
+}
 img#homeImg {
 	height: 30px;
 	width: 30px;
@@ -189,11 +192,13 @@ button {
 
 /* _________________________________________Instagram Page_______________________________________________ */
 
-.igDiv {
+div.igDiv {
 	width: 95%;
+	height:180px;
 	border: 1px solid #ffffff;
 	background-color: rgba(255,255,255,.25);
 	box-shadow: 0 2px 5px rgba(0,0,0,.8);
+	
 	margin-right: 25px;
 	margin-left: 15px;
 	margin-bottom: 10px;
@@ -203,9 +208,12 @@ button {
 	margin-bottom: 5px;
 }
 
-.igName {
-	color: #000000;
-	margin-top: 10px;
+li.igName {
+	
+	color: red;
+	margin-top: 0px;
+	margin-left: 175px;
+	margin-bottom: 10px;
 	
 	
 }
@@ -215,24 +223,66 @@ button {
 	
 }
 
-.igImg {
-	height: 60px;
-	width: 60px;
+li.igImg {
+	
+	height: 30px;
+	width: 30px;
 	margin-top: 2px;
 	margin-left: 2px;
 }
 .igUser{
-	margin-left: 5px;
+	margin-left: 50px;
 }
 
 .igText{
-	margin-left: 5px;
+	margin-left: 50px;
 }
 
 .igLikes{
-	margin-left: 5px;
+	margin-left: 175px;
 	color: blue;
 }
+
+/* _________________________________________Gelocation Page_______________________________________________ */
+
+
+.map {
+	margin-left: 15px;
+	}
+
+
+.deviceDiv {
+	width: 95%;
+	border: 1px solid #ffffff;
+	background-color: rgba(255,255,255,.65);
+	box-shadow: 0 2px 5px rgba(0,0,0,.8);
+	padding-top: 0px;
+	margin-left: 15px;
+	margin-right: 25px;
+	margin-bottom: 10px;
+
+}
+
+.accelDiv {
+	width: 95%;
+	border: 1px solid #ffffff;
+	background-color: rgba(255,255,255,.65);
+	box-shadow: 0 2px 5px rgba(0,0,0,.8);
+	padding-top: 0px;
+	margin-left: 15px;
+	margin-right: 25px;
+	margin-bottom: 10px;
+
+}
+#imgPop {
+	width: 250px;
+	height: 250px;
+	display: block;
+	border: none;
+	margin-bottom: 10px;
+	margin-left: 15px;
+}
+
 
 @media only screen and (max-width:480px){
 
@@ -244,11 +294,24 @@ button {
 		max-width: 1399px;
 		
 	}
+	ul#menuH li {
+		
+		width: 50%;
+	}
+	button{
+		
+		width: 50%;
+	}
 	nav{
 		float: left;
+		width: 50%;
 	}
 	div#responseImg{
-	display: none;
+	
+		float: right;
+		margin-top: -50px;
+		width: 50px;
+		height: 50px;
 	}
 
 }	
