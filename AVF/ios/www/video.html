@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+George Dacosta
+AVF 1306
+video.html
+June 17, 2013
+-->
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, width=device-width, ">
+	<meta name="HandheldFriendly" content="True"/>
+	<meta name="MobileOptimized" content="320"/>	
+	<title>Video</title>
+	<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rest">
+
+	<div id="videoPg">
+		<header data-role="header" id="videoHead">
+			<a href="index.html" id="launchLink"><img src="img/home.png" id="homeImg" alt="Home"/></a>
+			<h1>Video</h1>
+		</header>
+		
+		
+		<video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="640" height="264" poster=""data-setup="{}">
+		  <source src="#" type='video/mp4'>
+		</video>
+		
+	</div>	
+		
+	
+	<script type="text/javascript" src="js/libs/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="cordova-2.7.0.js"></script>
+	<script type="text/javascript" src="js/libs/video.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
