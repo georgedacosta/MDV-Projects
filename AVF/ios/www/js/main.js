@@ -152,22 +152,33 @@ dataType: 'jsonp',
          success : function(parsed_json) {
          console.log(parsed_json);
             	$('#weatherPop').empty();
+            	            	
                 $('#weatherPop').append(
                     $('<div>')
                     .attr("class","fcDiv")
-                    .append($("<h3>"+"Forecast for: "+ parsed_json.location.city + ", " +parsed_json.location.state+"</h3>")));
+                    .append($("<p>"+"Forecast for: "+ parsed_json.location.city + ", " +parsed_json.location.state+"</p>")
+                    .attr("class", "fcCity")));
 
-            $.each(parsed_json.forecast.txt_forecast.forecastday, function(){
-            console.log(parsed_json.forecast.txt_forecast.forecastday);
+            $.each(parsed_json.forecast.simpleforecast.forecastday, function(){
+            console.log(parsed_json.forecast.simpleforecast.forecastday);
                 
                 $('#weatherPop').append(
                     $('<div>')
                     .attr("class","fcDiv")
-                        .append($("<h4>" + this.title + "</h4>")
+                        .append($("<h4>" + this.date.weekday + "</h4>")
                         .attr("class", "fcTitle"))
-                        .append($("<img src=" + this.icon_url + ">"))
-                        .append($("<p>" + this.fcttext + "</p>")
-                            .attr("class","fctext")));
+                        .append($("<p>" + this.date.monthname + " " + this.date.day + "</p>")
+                        .attr("class", "fcDate"))
+                        .append($("<img src=" + this.icon_url + ">")
+                        .attr("class", "fcIcon"))
+                        .append($("<p>" + this.high.fahrenheit + "\u00B0" + "</p>")
+                        .attr("class", "fcHigh"))
+                        .append($("<p>" + this.low.fahrenheit + "\u00B0" + " Lo" + "</p>")
+                        .attr("class", "fcLow"))
+                        .append($("<p>" + "Winds: " + this.avewind.dir + " " + this.avewind.mph + " mph" + "</p>")
+                        .attr("class", "fcWinds"))
+                        .append($("<p>" + this.conditions + "</p>")
+                            .attr("class","fcCond")));
             });
 
   }

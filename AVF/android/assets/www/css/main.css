@@ -59,7 +59,7 @@ li {
 
 nav {
 	background-color: rgba(85,86,89,0.25);
-	margin-top: 35;
+	margin-top: 35px;
 	margin-right: 15px;
 	height:auto;
 	width: auto;
@@ -69,7 +69,9 @@ nav {
 }
 
 div#responseImg{
-	display: none;
+	height: auto;
+	width: auto;
+	float: left;
 }
 
 ul#menuH li {
@@ -87,9 +89,6 @@ ul#menuH li {
 	
 }
 
-img#yankLogo{
-	display:none;
-}
 img#homeImg {
 	height: 30px;
 	width: 30px;
@@ -107,6 +106,7 @@ button {
 	color: #000000;
 
 }
+
 
 /* _________________________________________Research Page_______________________________________________ */
 
@@ -131,10 +131,10 @@ button {
 /* _________________________________________Weather Page_______________________________________________ */
 
 .currentDiv{
-	width: 95%;
-	border: 1px solid #ffffff;
-	background-color: rgba(255,255,255,.25);
-	box-shadow: 0 2px 5px rgba(0,0,0,.8);
+	width: 75%;
+	border: 4px solid #000000;
+	background-color: rgba(128,219,242,0.78);
+	box-shadow: 0px 2px 5px rgba(0,0,0,.8);
 	margin-left: 15px;
 	margin-right: 25px;
 	margin-bottom: 10px;
@@ -154,23 +154,22 @@ button {
 }
 
 .ccTime {
-	
-	border: 1px solid #ffffff;
-	background-color: rgba(255,255,255,.25);
-	box-shadow: 0 2px 5px rgba(0,0,0,.8);
+	width: 75%;
+	border: 4px solid #000000;
+	background-color: rgba(128,219,242,0.78);
+	box-shadow: 0px 2px 5px rgba(0,0,0,.8);
 	margin-left: 15px;
-	margin-right: 15px;
+	margin-right: 25px;
 	margin-bottom: 10px;
-	
 }
 .obTime {
 	color: red;
 }
 .fcDiv {
-	width: 95%;
-	border: 1px solid #ffffff;
-	background-color: rgba(255,255,255,.25);
-	box-shadow: 0 2px 5px rgba(0,0,0,.8);
+	width: 75%;
+	border: 4px solid #000000;
+	background-color: rgba(128,219,242,0.78);
+	box-shadow: 0px 2px 5px rgba(0,0,0,.8);
 	margin-left: 15px;
 	margin-right: 25px;
 	margin-bottom: 10px;
@@ -182,14 +181,60 @@ button {
 	padding: 20px 0 0 0;
 	background: none;
 }
+
+.fcCity{
+	
+	color: white;
+	font-size: 150%;
+	margin-left: 20px;
+}
+
+.fcDate{
+	
+	margin: 10px 0 10px 25px;
+	font-size: 80%;
+	
+}
 .fcTitle {
 	padding-top: 10px 0 0 10px;
-	margin: 0 0 10px 0;
+	margin: 20px 0 10px 25px;
 	color: #000000;
+	
 		
 }
 
+.fcIcon{
+	
+	height: 75px;
+	width: 75px;
+	margin: -110px 0 0 110px;
+}
 
+.fcHigh
+{
+	font-size: 200%;
+	margin: -20px 0 0 60px;
+	color: red;
+	
+}
+.fcLow
+{
+	font-size: 125%;
+	margin: -5px 0 0 100px;
+}
+
+.fcWinds{
+	
+	font-size: 90%;
+	font-style: italic;
+	margin: 10px 0 0 25px;
+}
+
+.fcCond{
+	
+	margin: 5px 0 5px 25px;
+	
+}
 /* _________________________________________Instagram Page_______________________________________________ */
 
 div.igDiv {
@@ -304,14 +349,63 @@ li.igImg {
 	}
 	nav{
 		float: left;
-		width: 50%;
 	}
 	div#responseImg{
-	
+	display: none;
+	}
+	img#yankLogo {
 		float: right;
 		margin-top: -50px;
 		width: 50px;
 		height: 50px;
 	}
-
+	.fcWinds{
+		display: none;
+	}
+	.fcTitle{
+		color: white;
+	}
 }	
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 2) 
+{
+
+	.fcDate{
+		float:right;
+		margin-right: 25px;
+		margin-top: 20px;
+		font-size: 80%;
+		color: red;
+		}
+		
+	.fcIcon{
+		
+		height: 50px;
+		width: 50px;
+	}
+	div#responseImg{
+	float:right;
+	margin-right: 25px;
+	margin-top: -25px;
+	}
+	
+	fcTitle{
+	color:white;	
+	}
+}
+/*
+
+@media only screen
+and (-webkit-device-pixel-ratio:2)
+{
+
+div#responseImg{
+	display: none;
+}
+
+}
+*/

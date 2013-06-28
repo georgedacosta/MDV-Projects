@@ -33,10 +33,10 @@
 		"q2": ["Question 2:", "Based on your three answers above, what might you infer about each of the markets listed?"],
 		"q3":	["Question 3:", "What is the average cost and bandwidth limits per user (in general) in each of the three markets? How may this impact development?"],
 		"q4": 	["Question 4:", "And, finally, what would be your suggested strategy in project topic and global market choice? Feel free to have a first and second choice."],
-		"r1":	["Response 1:", "Not yet available, please check back soon!"],
-		"r2":	["Response 2:", "Not yet available, please check back soon!"],
-		"r3":	["Response 3:", "Not yet available, please check back soon!"],
-		"r4":	["Response 4:", "Not yet available, please check back soon!"]
+		"r1":	["Response 1:", "According to AppData as of June 24, the top paid app category is games, with the top paid app being Despicable Me Minion Rush in both the US and the UK."],
+		"r2":	["Response 2:", "Based on the results, it would appear that the app interest in the US and UK is currently games and in Japan utilities win the day. Although much can be inferred from the above results, this is an ever changing market and interests change with what is currently trending."],
+		"r3":	["Response 3:", "Great Britain runs approximately $28 per 2 gigabyte, Japan runs at around $11 per 2 gigabyte and the US costs skyrocket at approximately $43 per 2 gigabyte."],
+		"r4":	["Response 4:", "Although I have multiple app ideas, and they go across multiple categories, it would seem to me that regardless of the category type of the app, it should have a social media component."]
 		
 	}
 				
